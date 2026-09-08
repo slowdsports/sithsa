@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AHDECO - Iniciar Sesión</title>
+  <title>SITHSA - Iniciar Sesión</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/ahdeco.css">
@@ -52,10 +52,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 <div class="login-wrapper">
   <div class="login-card">
-    <img src="<?= BASE_URL ?>assets/images/logo2aa.png" alt="AHDECO" class="logo mb-2" style="height:70px;">
-    <p class="org-name">AHDECO</p>
+    <img src="<?= BASE_URL ?>assets/images/sithsa.jpeg" alt="SITHSA" class="logo mb-2" style="height:70px;">
+    <p class="org-name">SITHSA</p>
     <p class="text-muted" style="font-size:.78rem;margin-bottom:1.5rem;">
-      Asociación Hondureña para el Desarrollo Integral Comunitario<br>
+      Consorcio Empresarial Sistema Integrado de Transporte Hondureño S.A.<br>
       <strong>Sistema de Administración y Finanzas</strong>
     </p>
 
