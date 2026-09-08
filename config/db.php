@@ -2,10 +2,23 @@
 ini_set('display_errors', 0);
 error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 date_default_timezone_set('America/Tegucigalpa');
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'sithsa_admin');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+
+$currentHost = strtolower($_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'] ?? 'localhost');
+$currentHost = preg_replace('/:\d+$/', '', $currentHost);
+$isLocal = in_array($currentHost, ['localhost', '127.0.0.1', '::1'], true);
+
+if ($isLocal) {
+    define('DB_HOST', 'localhost');
+    define('DB_NAME', 'sithsa_admin');
+    define('DB_USER', 'root');
+    define('DB_PASS', '');
+} else {
+    define('DB_HOST', 'localhost');
+    define('DB_NAME', 'u6613652_sithsa_admin');
+    define('DB_USER', 'u6613652_root');
+    define('DB_PASS', 'sJmJPvG5?Q0n-+6Y');
+}
+
 define('DB_CHARSET', 'utf8mb4');
 
 try {
