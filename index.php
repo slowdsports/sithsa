@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="POST" autocomplete="off">
       <div class="mb-3 text-start">
         <label class="form-label"><i class="fas fa-envelope text-blue"></i> Correo electrónico</label>
-        <input type="email" name="email" class="form-control" placeholder="usuario@ahdeco.hn"
+        <input type="email" name="email" class="form-control" placeholder="usuario@gruposithsa.com"
                value="<?= htmlspecialchars($_POST['email'] ?? '') ?>" required autofocus>
       </div>
       <div class="mb-3 text-start">
