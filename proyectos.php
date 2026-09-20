@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -38,7 +38,7 @@ include __DIR__ . '/includes/header.php';
 ?>
 <div class="page-header">
   <h1><i class="fas fa-diagram-project"></i> Proyectos / Donantes</h1>
-  <button class="btn-ahdeco" data-bs-toggle="modal" data-bs-target="#modal-proy"><i class="fas fa-plus"></i> Nuevo Proyecto</button>
+  <button class="btn-sithsa" data-bs-toggle="modal" data-bs-target="#modal-proy"><i class="fas fa-plus"></i> Nuevo Proyecto</button>
 </div>
 <div class="row g-3 mb-3">
   <?php foreach($proyectos as $p): ?>
@@ -101,7 +101,7 @@ include __DIR__ . '/includes/header.php';
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn-ahdeco" onclick="saveProy()"><i class="fas fa-save"></i> Guardar</button>
+        <button type="button" class="btn-sithsa" onclick="saveProy()"><i class="fas fa-save"></i> Guardar</button>
       </div>
     </div>
   </div>

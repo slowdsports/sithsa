@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 if (!defined('BASE_URL')) {
     $docRoot = rtrim(str_replace('\\', '/', realpath($_SERVER['DOCUMENT_ROOT'])), '/');
     $appRoot  = rtrim(str_replace('\\', '/', realpath(dirname(__DIR__))), '/');
@@ -28,7 +28,7 @@ $_avatarFoto = $user['foto'] ? BASE_URL . $user['foto'] : '';
   <script>
     // Aplica el tema antes de que el navegador pinte para evitar el flash
     (function(){
-      var t = localStorage.getItem('ahdeco-theme') || 'light';
+      var t = localStorage.getItem('sithsa-theme') || 'light';
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
@@ -40,7 +40,7 @@ $_avatarFoto = $user['foto'] ? BASE_URL . $user['foto'] : '';
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css">
-  <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/ahdeco.css">
+  <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/sithsa.css">
 </head>
 <body>
 
@@ -50,7 +50,7 @@ $_avatarFoto = $user['foto'] ? BASE_URL . $user['foto'] : '';
     <i class="fas fa-bars"></i>
   </button>
   <div class="brand">
-    <img src="<?= BASE_URL ?>assets/images/sithsa.jpeg" alt="AHDECO">
+    <img src="<?= BASE_URL ?>assets/images/sithsa.jpeg" alt="SITHSA">
   </div>
   <span class="topbar-title">Sistema de Administración y Finanzas</span>
   <div class="topbar-right">

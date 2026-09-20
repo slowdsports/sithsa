@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -49,8 +49,8 @@ include __DIR__ . '/includes/header.php';
 <div class="page-header">
   <h1><i class="fas fa-book"></i> CatÃ¡logo de Cuentas Contables</h1>
   <div class="d-flex gap-2">
-    <button class="btn-ahdeco-outline" data-bs-toggle="collapse" data-bs-target="#filtros"><i class="fas fa-filter"></i> Filtrar</button>
-    <button class="btn-ahdeco" data-bs-toggle="modal" data-bs-target="#modal-cuenta"><i class="fas fa-plus"></i> Nueva Cuenta</button>
+    <button class="btn-sithsa-outline" data-bs-toggle="collapse" data-bs-target="#filtros"><i class="fas fa-filter"></i> Filtrar</button>
+    <button class="btn-sithsa" data-bs-toggle="modal" data-bs-target="#modal-cuenta"><i class="fas fa-plus"></i> Nueva Cuenta</button>
   </div>
 </div>
 
@@ -68,7 +68,7 @@ include __DIR__ . '/includes/header.php';
 
 <div class="card">
   <div class="card-body p-0">
-    <table id="tbl-cuentas" class="table-ahdeco w-100">
+    <table id="tbl-cuentas" class="table-sithsa w-100">
       <thead><tr><th>CÃ³digo</th><th>Nombre</th><th>Tipo</th><th>Subtipo</th><th>Nivel</th><th>Estado</th><th></th></tr></thead>
       <tbody>
         <?php foreach ($cuentas as $c): ?>
@@ -125,7 +125,7 @@ include __DIR__ . '/includes/header.php';
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn-ahdeco" onclick="saveCuenta()"><i class="fas fa-save"></i> Guardar</button>
+        <button type="button" class="btn-sithsa" onclick="saveCuenta()"><i class="fas fa-save"></i> Guardar</button>
       </div>
     </div>
   </div>

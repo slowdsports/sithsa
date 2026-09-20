@@ -1,10 +1,10 @@
--- ============================================================
--- AHDECO — Migración: Número de Proceso Unificado de Viáticos
--- Ejecutar UNA SOLA VEZ en la base de datos ahdeco_admin
+﻿-- ============================================================
+-- SITHSA — Migración: Número de Proceso Unificado de Viáticos
+-- Ejecutar UNA SOLA VEZ en la base de datos sithsa_admin
 -- Anticipo #N = Liquidación #N = Orden de Pago #N
 -- ============================================================
 
-USE ahdeco_admin;
+USE sithsa_admin;
 
 SET FOREIGN_KEY_CHECKS = 0;
 

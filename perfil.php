@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -205,7 +205,7 @@ include __DIR__ . '/includes/header.php';
             </div>
           </div>
           <div class="mt-3">
-            <button type="submit" class="btn-ahdeco"><i class="fas fa-save"></i> Guardar cambios</button>
+            <button type="submit" class="btn-sithsa"><i class="fas fa-save"></i> Guardar cambios</button>
           </div>
         </form>
       </div>
@@ -242,7 +242,7 @@ include __DIR__ . '/includes/header.php';
             </div>
           </div>
           <div class="mt-3">
-            <button type="submit" class="btn-ahdeco"><i class="fas fa-key"></i> Actualizar contraseña</button>
+            <button type="submit" class="btn-sithsa"><i class="fas fa-key"></i> Actualizar contraseña</button>
           </div>
         </form>
       </div>
@@ -288,7 +288,7 @@ function togglePass(btn) {
 }
 
 function quitarFoto() {
-  if (!confirm('¿Quitar la foto de perfil y volver al logo de AHDECO?')) return;
+  if (!confirm('¿Quitar la foto de perfil y volver al logo de SITHSA?')) return;
   const fd = new FormData();
   fd.append('csrf_token', _csrfPerfil);
   fd.append('_action', 'foto');

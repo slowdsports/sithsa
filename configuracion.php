@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -46,7 +46,7 @@ include __DIR__ . '/includes/header.php';
       </div>
 
       <div class="mt-4">
-        <button type="submit" class="btn-ahdeco"><i class="fas fa-save"></i> Guardar Configuración</button>
+        <button type="submit" class="btn-sithsa"><i class="fas fa-save"></i> Guardar Configuración</button>
       </div>
     </form>
   </div>

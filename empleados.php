@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -231,9 +231,9 @@ include __DIR__ . '/includes/header.php';
 <div class="page-header">
   <h1><i class="fas fa-users"></i> Empleados</h1>
   <?php if ($action === 'list'): ?>
-  <a href="?action=nuevo" class="btn-ahdeco"><i class="fas fa-plus"></i> Nuevo Empleado</a>
+  <a href="?action=nuevo" class="btn-sithsa"><i class="fas fa-plus"></i> Nuevo Empleado</a>
   <?php else: ?>
-  <a href="?" class="btn-ahdeco-outline"><i class="fas fa-arrow-left"></i> Volver</a>
+  <a href="?" class="btn-sithsa-outline"><i class="fas fa-arrow-left"></i> Volver</a>
   <?php endif; ?>
 </div>
 
@@ -241,7 +241,7 @@ include __DIR__ . '/includes/header.php';
 <!-- ── LIST VIEW ──────────────────────────────────────────────────── -->
 <div class="card">
   <div class="card-body p-0">
-    <table id="tbl-empleados" class="table-ahdeco w-100">
+    <table id="tbl-empleados" class="table-sithsa w-100">
       <thead>
         <tr>
           <th>Código</th><th>Nombre</th><th>Cargo</th><th>Departamento</th>
@@ -286,7 +286,7 @@ include __DIR__ . '/includes/header.php';
         <span class="fw-semibold" style="font-size:.88rem;">
           <i class="fas fa-briefcase" style="color:var(--ah-blue)"></i> Cargos
         </span>
-        <button class="btn btn-sm btn-ahdeco py-0 px-2" onclick="openCatalog('cargo')">
+        <button class="btn btn-sm btn-sithsa py-0 px-2" onclick="openCatalog('cargo')">
           <i class="fas fa-plus"></i> Agregar
         </button>
       </div>
@@ -324,7 +324,7 @@ include __DIR__ . '/includes/header.php';
         <span class="fw-semibold" style="font-size:.88rem;">
           <i class="fas fa-building" style="color:var(--ah-green)"></i> Departamentos
         </span>
-        <button class="btn btn-sm btn-ahdeco py-0 px-2" onclick="openCatalog('departamento')">
+        <button class="btn btn-sm btn-sithsa py-0 px-2" onclick="openCatalog('departamento')">
           <i class="fas fa-plus"></i> Agregar
         </button>
       </div>
@@ -362,7 +362,7 @@ include __DIR__ . '/includes/header.php';
         <span class="fw-semibold" style="font-size:.88rem;">
           <i class="fas fa-university" style="color:var(--ah-yellow)"></i> Bancos
         </span>
-        <button class="btn btn-sm btn-ahdeco py-0 px-2" onclick="openCatalog('banco')">
+        <button class="btn btn-sm btn-sithsa py-0 px-2" onclick="openCatalog('banco')">
           <i class="fas fa-plus"></i> Agregar
         </button>
       </div>
@@ -411,7 +411,7 @@ include __DIR__ . '/includes/header.php';
       </div>
       <div class="modal-footer py-2">
         <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn-ahdeco btn-sm" onclick="saveCatalog()">
+        <button type="button" class="btn-sithsa btn-sm" onclick="saveCatalog()">
           <i class="fas fa-save"></i> Guardar
         </button>
       </div>
@@ -613,7 +613,7 @@ include __DIR__ . '/includes/header.php';
       </div>
 
       <div class="mt-4 d-flex gap-2">
-        <button type="submit" class="btn-ahdeco"><i class="fas fa-save"></i> Guardar</button>
+        <button type="submit" class="btn-sithsa"><i class="fas fa-save"></i> Guardar</button>
         <a href="?" class="btn btn-outline-secondary btn-sm">Cancelar</a>
       </div>
     </form>
@@ -627,7 +627,7 @@ include __DIR__ . '/includes/header.php';
     <span class="badge bg-secondary ms-2"><?= count($histSalarial) ?> registros</span>
   </div>
   <div class="card-body p-0">
-    <table class="table-ahdeco w-100" style="font-size:.82rem;">
+    <table class="table-sithsa w-100" style="font-size:.82rem;">
       <thead>
         <tr>
           <th>Fecha</th>

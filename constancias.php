@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -17,7 +17,7 @@ $empleados = $pdo->query("SELECT e.*, CONCAT(nombre,' ',apellidos) AS nombre_com
     FROM empleados e WHERE activo=1 ORDER BY apellidos, nombre")->fetchAll();
 
 $config = getAllConfig($pdo);
-$org    = $config['nombre_organizacion'] ?? 'AHDECO';
+$org    = $config['nombre_organizacion'] ?? 'SITHSA';
 $orgFull= $config['nombre_completo'] ?? '';
 
 include __DIR__ . '/includes/header.php';
@@ -104,7 +104,7 @@ include __DIR__ . '/includes/header.php';
           </div>
 
           <div class="d-flex gap-2 mt-4">
-            <button type="submit" class="btn-ahdeco" id="btn-generar" disabled>
+            <button type="submit" class="btn-sithsa" id="btn-generar" disabled>
               <i class="fas fa-file-pdf"></i> Generar PDF
             </button>
             <button type="button" class="btn btn-outline-secondary" onclick="this.closest('form').reset();resetForm()">
@@ -122,8 +122,8 @@ $extraJs = <<<'JS'
 // Tipo buttons
 document.querySelectorAll('.tipo-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.tipo-btn').forEach(b => b.classList.remove('active','btn-ahdeco'));
-    btn.classList.add('active','btn-ahdeco');
+    document.querySelectorAll('.tipo-btn').forEach(b => b.classList.remove('active','btn-sithsa'));
+    btn.classList.add('active','btn-sithsa');
     btn.classList.remove('btn-outline-secondary');
     document.getElementById('input-tipo').value = btn.dataset.tipo;
     document.getElementById('tipo-display').textContent = btn.querySelector('strong').textContent;
@@ -173,7 +173,7 @@ document.getElementById('form-constancia').addEventListener('submit', function(e
 });
 
 function resetForm() {
-  document.querySelectorAll('.tipo-btn').forEach(b => { b.classList.remove('active','btn-ahdeco'); b.classList.add('btn-outline-secondary'); });
+  document.querySelectorAll('.tipo-btn').forEach(b => { b.classList.remove('active','btn-sithsa'); b.classList.add('btn-outline-secondary'); });
   document.getElementById('input-tipo').value = '';
   document.getElementById('tipo-display').textContent = '— Ninguno seleccionado —';
   document.getElementById('tipo-display').style.fontStyle = 'italic';

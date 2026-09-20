@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -48,7 +48,7 @@ include __DIR__ . '/includes/header.php';
 ?>
 <div class="page-header">
   <h1><i class="fas fa-laptop"></i> Activos Fijos</h1>
-  <button class="btn-ahdeco" data-bs-toggle="modal" data-bs-target="#modal-activo"><i class="fas fa-plus"></i> Nuevo Activo</button>
+  <button class="btn-sithsa" data-bs-toggle="modal" data-bs-target="#modal-activo"><i class="fas fa-plus"></i> Nuevo Activo</button>
 </div>
 <div class="row g-3 mb-3">
   <div class="col-md-4">
@@ -74,7 +74,7 @@ include __DIR__ . '/includes/header.php';
   </div>
 </div>
 <div class="card"><div class="card-body p-0">
-  <table id="tbl-act" class="table-ahdeco w-100">
+  <table id="tbl-act" class="table-sithsa w-100">
     <thead><tr><th>CÃ³digo</th><th>DescripciÃ³n</th><th>CategorÃ­a</th><th>Fecha Adq.</th><th>Costo</th><th>Valor Libro</th><th>Responsable</th><th>Estado</th><th></th></tr></thead>
     <tbody>
       <?php foreach($activos as $a): ?>
@@ -124,7 +124,7 @@ include __DIR__ . '/includes/header.php';
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn-ahdeco" onclick="saveActivo()"><i class="fas fa-save"></i> Guardar</button>
+        <button type="button" class="btn-sithsa" onclick="saveActivo()"><i class="fas fa-save"></i> Guardar</button>
       </div>
     </div>
   </div>

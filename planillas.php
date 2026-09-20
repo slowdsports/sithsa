@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -214,18 +214,18 @@ include __DIR__ . '/includes/header.php';
 <div class="page-header">
   <h1><i class="fas fa-money-check-dollar"></i> Planillas Quincenales</h1>
   <?php if ($action === 'list'): ?>
-  <button class="btn-ahdeco" data-bs-toggle="modal" data-bs-target="#modal-generar">
+  <button class="btn-sithsa" data-bs-toggle="modal" data-bs-target="#modal-generar">
     <i class="fas fa-plus"></i> Generar Planilla
   </button>
   <?php else: ?>
-  <a href="?" class="btn-ahdeco-outline"><i class="fas fa-arrow-left"></i> Volver</a>
+  <a href="?" class="btn-sithsa-outline"><i class="fas fa-arrow-left"></i> Volver</a>
   <?php endif; ?>
 </div>
 
 <?php if ($action === 'list'): ?>
 <div class="card">
   <div class="card-body p-0">
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead>
         <tr><th>Período</th><th>Quincena</th><th>Fecha Pago</th><th>Total Bruto</th><th>Deducciones</th><th>Total Neto</th><th>Estado</th><th></th></tr>
       </thead>
@@ -259,7 +259,7 @@ include __DIR__ . '/includes/header.php';
 <input type="hidden" name="csrf_token" value="<?= csrfToken() ?>">
 <div id="print-area">
   <div class="print-header">
-    <h4>AHDECO — Planilla Quincional</h4>
+    <h4>SITHSA — Planilla Quincional</h4>
     <p><?= $meses[$periodo['mes']-1] . ' ' . $periodo['anio'] ?> | <?= $periodo['quincena'] === 'primera' ? '1ra Quincena (1-15)' : '2da Quincena (16-31)' ?></p>
   </div>
 
@@ -306,7 +306,7 @@ include __DIR__ . '/includes/header.php';
 
   <div class="card">
     <div class="card-body p-0 table-scroll" style="overflow-x:auto;overflow-y:auto;max-height:calc(100vh - 240px);">
-      <table class="table-ahdeco w-100" style="font-size:.78rem;">
+      <table class="table-sithsa w-100" style="font-size:.78rem;">
         <thead>
           <tr>
             <th>#</th><th>Empleado</th><th>Cargo</th>
@@ -474,7 +474,7 @@ include __DIR__ . '/includes/header.php';
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn-ahdeco" onclick="submitPlanilla()">
+        <button type="button" class="btn-sithsa" onclick="submitPlanilla()">
           <i class="fas fa-cog"></i> Generar Planilla
         </button>
       </div>
@@ -525,7 +525,7 @@ document.querySelector('[name=anio]')?.addEventListener('change', updateFechas);
 async function submitPlanilla() {
   const form = document.getElementById('form-planilla');
   const fd = new FormData(form);
-  const btn = document.querySelector('.modal-footer .btn-ahdeco');
+  const btn = document.querySelector('.modal-footer .btn-sithsa');
   btn.disabled = true; btn.innerHTML = '<i class=\"fas fa-spinner fa-spin\"></i> Procesando...';
   try {
     const res = await post('planillas.php', fd);

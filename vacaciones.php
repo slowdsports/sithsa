@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -98,11 +98,11 @@ include __DIR__ . '/includes/header.php';
 <div class="page-header">
   <h1><i class="fas fa-umbrella-beach"></i> Control de Vacaciones</h1>
   <?php if ($action === 'list'): ?>
-  <button class="btn-ahdeco" data-bs-toggle="modal" data-bs-target="#modal-nueva">
+  <button class="btn-sithsa" data-bs-toggle="modal" data-bs-target="#modal-nueva">
     <i class="fas fa-plus"></i> Nueva Solicitud
   </button>
   <?php else: ?>
-  <a href="vacaciones.php" class="btn-ahdeco-outline"><i class="fas fa-arrow-left"></i> Volver</a>
+  <a href="vacaciones.php" class="btn-sithsa-outline"><i class="fas fa-arrow-left"></i> Volver</a>
   <?php endif; ?>
 </div>
 
@@ -112,7 +112,7 @@ include __DIR__ . '/includes/header.php';
 <div class="card mb-4">
   <div class="card-header"><i class="fas fa-chart-bar"></i> Saldo Vacacional <?= date('Y') ?></div>
   <div class="card-body p-0">
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead><tr><th>Empleado</th><th>Cargo</th><th>Antigüedad</th><th>Días Ley</th><th>Tomados este año</th><th>Saldo disponible</th></tr></thead>
       <tbody>
         <?php foreach ($empleados as $e):
@@ -138,7 +138,7 @@ include __DIR__ . '/includes/header.php';
 <div class="card">
   <div class="card-header"><i class="fas fa-list"></i> Solicitudes de Vacaciones</div>
   <div class="card-body p-0">
-    <table id="tbl-vac" class="table-ahdeco w-100">
+    <table id="tbl-vac" class="table-sithsa w-100">
       <thead><tr><th>Número</th><th>Empleado</th><th>Cargo</th><th>Inicio</th><th>Fin</th><th>Días</th><th>Tipo</th><th>Estado</th><th></th></tr></thead>
       <tbody>
         <?php foreach ($listaVac as $v): ?>
@@ -268,7 +268,7 @@ include __DIR__ . '/includes/header.php';
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn-ahdeco" onclick="crearVac()"><i class="fas fa-save"></i> Guardar</button>
+        <button type="button" class="btn-sithsa" onclick="crearVac()"><i class="fas fa-save"></i> Guardar</button>
       </div>
     </div>
   </div>

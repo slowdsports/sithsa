@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -172,7 +172,7 @@ include __DIR__ . '/includes/header.php';
       <div class="card-header"><i class="fas fa-chart-bar"></i> Top Cuentas de Gasto — <?= date('Y') ?></div>
       <div class="card-body p-0">
         <?php if ($topCuentas): ?>
-        <table class="table-ahdeco w-100">
+        <table class="table-sithsa w-100">
           <tbody>
             <?php foreach ($topCuentas as $tc):
               $pctTC = $totTopCuentas > 0 ? round($tc['total'] / $totTopCuentas * 100, 1) : 0;
@@ -206,7 +206,7 @@ include __DIR__ . '/includes/header.php';
         <a href="<?= BASE_URL ?>compras_solicitud.php" class="ms-auto" style="font-size:.76rem">Ver todas</a>
       </div>
       <div class="card-body p-0">
-        <table class="table-ahdeco w-100">
+        <table class="table-sithsa w-100">
           <thead><tr><th>Número</th><th>Solicitante</th><th>Estado</th></tr></thead>
           <tbody>
             <?php foreach ($compras_recientes as $r): ?>
@@ -231,7 +231,7 @@ include __DIR__ . '/includes/header.php';
         <a href="<?= BASE_URL ?>compras_pago.php" class="ms-auto" style="font-size:.76rem">Ver todas</a>
       </div>
       <div class="card-body p-0">
-        <table class="table-ahdeco w-100">
+        <table class="table-sithsa w-100">
           <thead><tr><th>Número</th><th>Beneficiario</th><th>Monto</th><th>Estado</th></tr></thead>
           <tbody>
             <?php foreach ($pagos_recientes as $r): ?>
@@ -292,7 +292,7 @@ $extraJs = "
   }
 
   buildChart();
-  document.addEventListener('ahdeco:themechange', buildChart);
+  document.addEventListener('sithsa:themechange', buildChart);
 })();
 ";
 include __DIR__ . '/includes/footer.php';

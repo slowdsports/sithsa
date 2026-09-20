@@ -1,22 +1,22 @@
-USE ahdeco_admin;
+﻿USE sithsa_admin;
 
 -- =========================================
 -- USUARIO ADMINISTRADOR
 -- Password: Admin2024! (hash bcrypt)
 -- =========================================
 INSERT INTO usuarios (nombre, email, password, rol) VALUES
-('Administrador AHDECO', 'admin@ahdeco.hn', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin');
+('Administrador SITHSA', 'admin@sithsa.hn', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin');
 -- NOTA: La contraseña por defecto es "password". Cámbiala después del primer acceso.
 
 -- =========================================
 -- CONFIGURACIÓN DEL SISTEMA
 -- =========================================
 INSERT INTO configuracion (clave, valor, descripcion) VALUES
-('nombre_organizacion', 'AHDECO', 'Nombre de la organización'),
+('nombre_organizacion', 'SITHSA', 'Nombre de la organización'),
 ('nombre_completo', 'Asociación Hondureña para el Desarrollo Integral Comunitario', 'Nombre completo'),
 ('rtn', '0801-xxxx-xxxxx', 'RTN de la organización'),
 ('telefono', '+504 xxxx-xxxx', 'Teléfono'),
-('correo', 'info@ahdeco.hn', 'Correo electrónico'),
+('correo', 'info@sithsa.hn', 'Correo electrónico'),
 ('direccion', 'Tegucigalpa, Honduras', 'Dirección'),
 ('moneda', 'HNL', 'Moneda principal'),
 ('ihss_empleado', '2.5', 'Porcentaje IHSS empleado'),
@@ -174,10 +174,10 @@ INSERT INTO cuentas_contables (codigo, nombre, tipo, subtipo, nivel, cuenta_padr
 -- EMPLEADOS DE EJEMPLO
 -- =========================================
 INSERT INTO empleados (codigo, nombre, apellidos, identidad, cargo, departamento, tipo_contrato, fecha_ingreso, sueldo_mensual, banco, aplica_ihss, aplica_rap, aplica_isr, email, activo) VALUES
-('EMP001', 'Noe', 'García López', '0801-1990-12345', 'Administración y Finanzas', 'Administración', 'indefinido', '2022-01-01', 12000.00, 'BAC', 1, 1, 1, 'noe.garcia@ahdeco.hn', 1),
-('EMP002', 'Nora', 'Martínez Reyes', '0504-1988-67890', 'Gerente de Proyectos', 'Proyectos', 'indefinido', '2021-03-15', 18000.00, 'Atlántida', 1, 1, 1, 'nora.martinez@ahdeco.hn', 1),
-('EMP003', 'Director', 'Ejecutivo AHDECO', '0801-1980-11111', 'Director Ejecutivo', 'Dirección', 'indefinido', '2019-06-01', 30000.00, 'BAC', 1, 1, 1, 'director@ahdeco.hn', 1),
-('EMP004', 'Contadora', 'Principal AHDECO', '0801-1985-22222', 'Administración y Finanzas', 'Administración', 'indefinido', '2020-08-01', 22000.00, 'BAC', 1, 1, 1, 'contadora@ahdeco.hn', 1);
+('EMP001', 'Noe', 'García López', '0801-1990-12345', 'Administración y Finanzas', 'Administración', 'indefinido', '2022-01-01', 12000.00, 'BAC', 1, 1, 1, 'noe.garcia@sithsa.hn', 1),
+('EMP002', 'Nora', 'Martínez Reyes', '0504-1988-67890', 'Gerente de Proyectos', 'Proyectos', 'indefinido', '2021-03-15', 18000.00, 'Atlántida', 1, 1, 1, 'nora.martinez@sithsa.hn', 1),
+('EMP003', 'Director', 'Ejecutivo SITHSA', '0801-1980-11111', 'Director Ejecutivo', 'Dirección', 'indefinido', '2019-06-01', 30000.00, 'BAC', 1, 1, 1, 'director@sithsa.hn', 1),
+('EMP004', 'Contadora', 'Principal SITHSA', '0801-1985-22222', 'Administración y Finanzas', 'Administración', 'indefinido', '2020-08-01', 22000.00, 'BAC', 1, 1, 1, 'contadora@sithsa.hn', 1);
 
 -- =========================================
 -- PROYECTOS DE EJEMPLO
@@ -185,7 +185,7 @@ INSERT INTO empleados (codigo, nombre, apellidos, identidad, cargo, departamento
 INSERT INTO proyectos (codigo, nombre, donante, descripcion, fecha_inicio, fecha_fin, presupuesto_total, moneda, estado) VALUES
 ('PROJ-2024-01', 'Fortalecimiento Comunitario Choluteca', 'USAID', 'Proyecto de fortalecimiento de capacidades comunitarias en el departamento de Choluteca', '2024-01-01', '2025-12-31', 500000.00, 'USD', 'activo'),
 ('PROJ-2024-02', 'Seguridad Alimentaria Valle', 'FAO', 'Programa de seguridad alimentaria en el Valle de Sula', '2024-03-01', '2025-02-28', 350000.00, 'USD', 'activo'),
-('ADM-2024', 'Administración y Operaciones', 'AHDECO', 'Gastos operativos y administrativos de la organización', '2024-01-01', '2024-12-31', 1200000.00, 'HNL', 'activo');
+('ADM-2024', 'Administración y Operaciones', 'SITHSA', 'Gastos operativos y administrativos de la organización', '2024-01-01', '2024-12-31', 1200000.00, 'HNL', 'activo');
 
 -- =========================================
 -- PROVEEDORES DE EJEMPLO

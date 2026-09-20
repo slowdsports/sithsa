@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -208,8 +208,8 @@ include __DIR__ . '/includes/header.php';
 <div class="page-header">
   <h1><i class="fas fa-landmark"></i> Tesorería</h1>
   <div class="d-flex gap-2">
-    <a href="<?= BASE_URL ?>print_tesoreria.php" target="_blank" class="btn-ahdeco-outline"><i class="fas fa-file-pdf"></i> PDF / Imprimir</a>
-    <button class="btn-ahdeco" onclick="openCuentaModal(0)"><i class="fas fa-plus"></i> Nueva Cuenta</button>
+    <a href="<?= BASE_URL ?>print_tesoreria.php" target="_blank" class="btn-sithsa-outline"><i class="fas fa-file-pdf"></i> PDF / Imprimir</a>
+    <button class="btn-sithsa" onclick="openCuentaModal(0)"><i class="fas fa-plus"></i> Nueva Cuenta</button>
   </div>
 </div>
 
@@ -255,7 +255,7 @@ include __DIR__ . '/includes/header.php';
   </div>
   <div class="card-body p-0">
     <?php if ($cuentas): ?>
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead>
         <tr>
           <th>Cuenta</th>
@@ -340,7 +340,7 @@ include __DIR__ . '/includes/header.php';
     <div class="text-center text-muted py-5">
       <i class="fas fa-building-columns fa-2x mb-2 d-block"></i>
       No hay cuentas bancarias registradas.
-      <button class="btn-ahdeco d-block mx-auto mt-3" onclick="openCuentaModal(0)"><i class="fas fa-plus"></i> Agregar primera cuenta</button>
+      <button class="btn-sithsa d-block mx-auto mt-3" onclick="openCuentaModal(0)"><i class="fas fa-plus"></i> Agregar primera cuenta</button>
     </div>
     <?php endif; ?>
   </div>
@@ -466,10 +466,10 @@ include __DIR__ . '/includes/header.php';
         </div>
         <!-- Botones -->
         <div class="col-12 d-flex gap-2 flex-wrap">
-          <button id="btn-simular" class="btn-ahdeco-outline" onclick="submitMovimiento(0)" disabled>
+          <button id="btn-simular" class="btn-sithsa-outline" onclick="submitMovimiento(0)" disabled>
             <i class="fas fa-flask"></i> Guardar como Simulación
           </button>
-          <button id="btn-ejecutar" class="btn-ahdeco" onclick="submitMovimiento(1)" disabled>
+          <button id="btn-ejecutar" class="btn-sithsa" onclick="submitMovimiento(1)" disabled>
             <i class="fas fa-bolt"></i> Ejecutar Transferencia
           </button>
         </div>
@@ -485,7 +485,7 @@ include __DIR__ . '/includes/header.php';
 <div class="card mb-4">
   <div class="card-header"><i class="fas fa-clock-rotate-left"></i> Historial de Movimientos</div>
   <div class="card-body p-0">
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead>
         <tr>
           <th>Fecha</th>
@@ -550,7 +550,7 @@ include __DIR__ . '/includes/header.php';
   </div>
   <div class="card-body p-0">
     <?php if ($ops): ?>
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead>
         <tr><th>Número</th><th>Fecha</th><th>Beneficiario</th><th>Concepto</th><th class="text-end">Monto</th><th>Estado</th><th>Banco Asignado</th></tr>
       </thead>
@@ -650,7 +650,7 @@ include __DIR__ . '/includes/header.php';
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="submit" class="btn-ahdeco"><i class="fas fa-save"></i> Guardar</button>
+          <button type="submit" class="btn-sithsa"><i class="fas fa-save"></i> Guardar</button>
         </div>
       </form>
     </div>
@@ -682,7 +682,7 @@ include __DIR__ . '/includes/header.php';
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="submit" class="btn-ahdeco"><i class="fas fa-arrows-rotate"></i> Actualizar</button>
+          <button type="submit" class="btn-sithsa"><i class="fas fa-arrows-rotate"></i> Actualizar</button>
         </div>
       </form>
     </div>

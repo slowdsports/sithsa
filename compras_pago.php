@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -152,15 +152,15 @@ include __DIR__ . '/includes/header.php';
 <div class="page-header">
   <h1><i class="fas fa-money-bill-transfer"></i> Orden de Pago</h1>
   <?php if ($action==='list'): ?>
-  <a href="?action=nuevo" class="btn-ahdeco"><i class="fas fa-plus"></i> Nueva OP</a>
+  <a href="?action=nuevo" class="btn-sithsa"><i class="fas fa-plus"></i> Nueva OP</a>
   <?php else: ?>
-  <a href="?" class="btn-ahdeco-outline"><i class="fas fa-arrow-left"></i> Volver</a>
+  <a href="?" class="btn-sithsa-outline"><i class="fas fa-arrow-left"></i> Volver</a>
   <?php endif; ?>
 </div>
 
 <?php if ($action==='list'): ?>
 <div class="card"><div class="card-body p-0">
-  <table id="tbl-op" class="table-ahdeco w-100">
+  <table id="tbl-op" class="table-sithsa w-100">
     <thead><tr><th>Proceso</th><th>Número</th><th>Fecha</th><th>Beneficiario</th><th>Concepto</th><th>Monto</th><th>Forma Pago</th><th>Estado</th><th></th></tr></thead>
     <tbody>
       <?php foreach($lista as $r): ?>
@@ -427,7 +427,7 @@ include __DIR__ . '/includes/header.php';
       <div class="col-12"><label class="form-label">Notas</label><input type="text" name="notas" class="form-control"></div>
     </div>
     <div class="mt-4 d-flex gap-2">
-      <button type="submit" class="btn-ahdeco"><i class="fas fa-save"></i> Crear Orden de Pago</button>
+      <button type="submit" class="btn-sithsa"><i class="fas fa-save"></i> Crear Orden de Pago</button>
       <a href="?" class="btn btn-outline-secondary btn-sm">Cancelar</a>
     </div>
   </form>

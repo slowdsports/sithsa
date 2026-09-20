@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -188,7 +188,7 @@ include __DIR__ . '/includes/header.php';
     <?php endif; ?>
   </div>
   <div class="card-body p-0">
-    <table class="table-ahdeco w-100" style="font-size:.82rem">
+    <table class="table-sithsa w-100" style="font-size:.82rem">
       <thead>
         <tr>
           <th style="width:130px">Fecha / Hora</th>

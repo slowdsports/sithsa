@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -119,11 +119,11 @@ include __DIR__ . '/includes/header.php';
 
 <!-- Navegación de mes -->
 <div class="d-flex align-items-center gap-3 mb-4 flex-wrap">
-  <a href="?anio=<?= $prevAnio ?>&mes=<?= $prevMes ?>" class="btn-ahdeco-outline">
+  <a href="?anio=<?= $prevAnio ?>&mes=<?= $prevMes ?>" class="btn-sithsa-outline">
     <i class="fas fa-chevron-left"></i>
   </a>
   <h4 class="mb-0 fw-bold" style="min-width:200px;text-align:center"><?= $meses[$mes] ?> <?= $anio ?></h4>
-  <a href="?anio=<?= $nextAnio ?>&mes=<?= $nextMes ?>" class="btn-ahdeco-outline">
+  <a href="?anio=<?= $nextAnio ?>&mes=<?= $nextMes ?>" class="btn-sithsa-outline">
     <i class="fas fa-chevron-right"></i>
   </a>
   <a href="?anio=<?= date('Y') ?>&mes=<?= date('n') ?>" class="btn btn-sm btn-outline-secondary ms-2">Hoy</a>

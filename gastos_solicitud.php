@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -104,16 +104,16 @@ include __DIR__ . '/includes/header.php';
 <div class="page-header">
   <h1><i class="fas fa-file-invoice-dollar"></i> Solicitud de Gastos / Reembolsos</h1>
   <?php if ($action === 'list'): ?>
-  <a href="?action=nuevo" class="btn-ahdeco"><i class="fas fa-plus"></i> Nueva Solicitud</a>
+  <a href="?action=nuevo" class="btn-sithsa"><i class="fas fa-plus"></i> Nueva Solicitud</a>
   <?php else: ?>
-  <a href="?" class="btn-ahdeco-outline"><i class="fas fa-arrow-left"></i> Volver</a>
+  <a href="?" class="btn-sithsa-outline"><i class="fas fa-arrow-left"></i> Volver</a>
   <?php endif; ?>
 </div>
 
 <?php if ($action === 'list'): ?>
 <div class="card">
   <div class="card-body p-0">
-    <table id="tbl-sg" class="table-ahdeco w-100">
+    <table id="tbl-sg" class="table-sithsa w-100">
       <thead><tr><th>Proceso</th><th>Número</th><th>Fecha</th><th>Empleado</th><th>Descripción</th><th>Total</th><th>Estado</th><th></th></tr></thead>
       <tbody>
         <?php foreach ($listaSolicitudes as $r): ?>
@@ -204,7 +204,7 @@ include __DIR__ . '/includes/header.php';
 <div class="card">
   <div class="card-header"><i class="fas fa-list"></i> Detalle de Gastos</div>
   <div class="card-body p-0">
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead><tr><th>#</th><th>Fecha</th><th>Descripción</th><th>Cuenta</th><th>Monto</th></tr></thead>
       <tbody>
         <?php $i=1; foreach ($detalle as $d): ?>
@@ -294,7 +294,7 @@ include __DIR__ . '/includes/header.php';
 
       <div class="form-section-title mt-3">Detalle de Gastos</div>
       <div class="table-responsive">
-        <table class="table-ahdeco w-100" id="tbl-items">
+        <table class="table-sithsa w-100" id="tbl-items">
           <thead><tr><th>#</th><th>Fecha</th><th>Descripción</th><th>Cuenta Contable</th><th>Monto (L.)</th><th></th></tr></thead>
           <tbody id="tbody-items">
             <?php
@@ -331,7 +331,7 @@ include __DIR__ . '/includes/header.php';
       </button>
 
       <div class="mt-4 d-flex gap-2">
-        <button type="submit" class="btn-ahdeco"><i class="fas fa-save"></i> Guardar Solicitud</button>
+        <button type="submit" class="btn-sithsa"><i class="fas fa-save"></i> Guardar Solicitud</button>
         <a href="?" class="btn btn-outline-secondary btn-sm">Cancelar</a>
       </div>
     </form>

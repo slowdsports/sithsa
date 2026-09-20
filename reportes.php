@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -62,7 +62,7 @@ include __DIR__ . '/includes/header.php';
     <select class="form-select form-select-sm" id="sel-anio-rep" style="width:100px" onchange="location.href='reportes.php?anio='+this.value">
       <?php for($y=2022;$y<=date('Y')+1;$y++): ?><option value="<?= $y ?>" <?= $y==$anio?'selected':'' ?>><?= $y ?></option><?php endfor; ?>
     </select>
-    <button class="btn-ahdeco-outline" onclick="window.print()"><i class="fas fa-print"></i> Imprimir</button>
+    <button class="btn-sithsa-outline" onclick="window.print()"><i class="fas fa-print"></i> Imprimir</button>
   </div>
 </div>
 
@@ -112,7 +112,7 @@ include __DIR__ . '/includes/header.php';
     <div class="card h-100">
       <div class="card-header"><i class="fas fa-truck"></i> Top Proveedores (Pagos)</div>
       <div class="card-body p-0">
-        <table class="table-ahdeco w-100">
+        <table class="table-sithsa w-100">
           <thead><tr><th>Proveedor</th><th class="text-end">Total</th></tr></thead>
           <tbody>
             <?php foreach($topProv as $r): ?>
@@ -130,7 +130,7 @@ include __DIR__ . '/includes/header.php';
     <div class="card h-100">
       <div class="card-header"><i class="fas fa-book"></i> Gastos por Cuenta Contable</div>
       <div class="card-body p-0">
-        <table class="table-ahdeco w-100">
+        <table class="table-sithsa w-100">
           <thead><tr><th>Código</th><th>Cuenta</th><th class="text-end">Total</th></tr></thead>
           <tbody>
             <?php foreach($gastCta as $r): ?>
@@ -148,7 +148,7 @@ include __DIR__ . '/includes/header.php';
     <div class="card">
       <div class="card-header"><i class="fas fa-diagram-project"></i> Gastos por Proyecto</div>
       <div class="card-body p-0">
-        <table class="table-ahdeco w-100">
+        <table class="table-sithsa w-100">
           <thead><tr><th>Proyecto</th><th class="text-end">Total Gastos Reembolsados</th></tr></thead>
           <tbody>
             <?php foreach($gastProy as $r): ?>

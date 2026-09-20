@@ -1,6 +1,6 @@
-<?php return array(
+﻿<?php return array(
     'root' => array(
-        'name' => 'ahdeco/admin',
+        'name' => 'sithsa/admin',
         'pretty_version' => '1.0.0+no-version-set',
         'version' => '1.0.0.0',
         'reference' => null,
@@ -10,7 +10,7 @@
         'dev' => true,
     ),
     'versions' => array(
-        'ahdeco/admin' => array(
+        'sithsa/admin' => array(
             'pretty_version' => '1.0.0+no-version-set',
             'version' => '1.0.0.0',
             'reference' => null,

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -112,17 +112,17 @@ include __DIR__ . '/includes/header.php';
 <div class="page-header">
   <h1><i class="fas fa-list-check"></i> Planillas de Asignación</h1>
   <?php if ($action === 'list'): ?>
-  <button class="btn-ahdeco" data-bs-toggle="modal" data-bs-target="#modal-crear">
+  <button class="btn-sithsa" data-bs-toggle="modal" data-bs-target="#modal-crear">
     <i class="fas fa-plus"></i> Nueva Planilla
   </button>
   <?php else: ?>
-  <a href="planillas_asignacion.php" class="btn-ahdeco-outline"><i class="fas fa-arrow-left"></i> Volver</a>
+  <a href="planillas_asignacion.php" class="btn-sithsa-outline"><i class="fas fa-arrow-left"></i> Volver</a>
   <?php endif; ?>
 </div>
 
 <?php if ($action === 'list'): ?>
 <div class="card"><div class="card-body p-0">
-  <table id="tbl-pa" class="table-ahdeco w-100">
+  <table id="tbl-pa" class="table-sithsa w-100">
     <thead>
       <tr><th>Número</th><th>Período</th><th>Descripción</th><th>Proyecto</th><th>Total</th><th>Estado</th><th></th></tr>
     </thead>
@@ -186,7 +186,7 @@ include __DIR__ . '/includes/header.php';
   <input type="hidden" name="_action" value="guardar_detalle">
   <input type="hidden" name="id" value="<?= $id ?>">
   <div class="card"><div class="card-body p-0" style="overflow-x:auto;">
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead>
         <tr>
           <th style="width:2.5rem">#</th>
@@ -230,7 +230,7 @@ include __DIR__ . '/includes/header.php';
   </div></div>
 
   <div class="mt-3 d-flex gap-2 align-items-center">
-    <button type="button" class="btn-ahdeco" onclick="guardarDetalle()">
+    <button type="button" class="btn-sithsa" onclick="guardarDetalle()">
       <i class="fas fa-save"></i> Guardar Detalle
     </button>
     <span id="save-status" style="font-size:.82rem;color:var(--text-3)"></span>
@@ -288,7 +288,7 @@ include __DIR__ . '/includes/header.php';
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn-ahdeco" onclick="crearPlanilla()">
+        <button type="button" class="btn-sithsa" onclick="crearPlanilla()">
           <i class="fas fa-plus"></i> Crear
         </button>
       </div>

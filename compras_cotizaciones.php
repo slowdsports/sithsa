@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -74,15 +74,15 @@ include __DIR__ . '/includes/header.php';
 <div class="page-header">
   <h1><i class="fas fa-file-lines"></i> Resumen de Cotizaciones</h1>
   <?php if ($action==='list'): ?>
-  <a href="?action=nuevo<?= $scId?"&sc_id=$scId":'' ?>" class="btn-ahdeco"><i class="fas fa-plus"></i> Nueva Cotización</a>
+  <a href="?action=nuevo<?= $scId?"&sc_id=$scId":'' ?>" class="btn-sithsa"><i class="fas fa-plus"></i> Nueva Cotización</a>
   <?php else: ?>
-  <a href="?" class="btn-ahdeco-outline"><i class="fas fa-arrow-left"></i> Volver</a>
+  <a href="?" class="btn-sithsa-outline"><i class="fas fa-arrow-left"></i> Volver</a>
   <?php endif; ?>
 </div>
 
 <?php if ($action==='list'): ?>
 <div class="card"><div class="card-body p-0">
-  <table id="tbl-co" class="table-ahdeco w-100">
+  <table id="tbl-co" class="table-sithsa w-100">
     <thead><tr><th>Número</th><th>SC Referencia</th><th>Fecha</th><th>Proveedor Seleccionado</th><th>Estado</th><th></th></tr></thead>
     <tbody>
       <?php foreach($lista as $r): ?>
@@ -127,7 +127,7 @@ include __DIR__ . '/includes/header.php';
 <div class="card">
   <div class="card-header"><i class="fas fa-balance-scale"></i> Comparativo de Cotizaciones</div>
   <div class="card-body p-0" style="overflow-x:auto;">
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead><tr><th>Proveedor</th><th>No. Cotización</th><th>Fecha</th><th>Total Ofertado</th><th>Condiciones</th><th>T. Entrega</th><th>Seleccionado</th></tr></thead>
       <tbody>
         <?php foreach($cotProvs as $cp): ?>
@@ -202,7 +202,7 @@ include __DIR__ . '/includes/header.php';
       </div>
       <button type="button" class="btn btn-sm btn-outline-success" onclick="addProvRow()"><i class="fas fa-plus"></i> Agregar Proveedor</button>
       <div class="mt-4 d-flex gap-2">
-        <button type="submit" class="btn-ahdeco"><i class="fas fa-save"></i> Guardar</button>
+        <button type="submit" class="btn-sithsa"><i class="fas fa-save"></i> Guardar</button>
         <a href="?" class="btn btn-outline-secondary btn-sm">Cancelar</a>
       </div>
     </form>

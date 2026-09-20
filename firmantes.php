@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -80,7 +80,7 @@ include __DIR__ . '/includes/header.php';
           <span class="badge bg-secondary ms-1" style="font-size:.65rem;letter-spacing:.06em"><?= strtoupper($doc) ?></span>
         </div>
         <div class="card-body p-0">
-          <table class="table-ahdeco w-100 mb-0">
+          <table class="table-sithsa w-100 mb-0">
             <thead>
               <tr>
                 <th style="width:2.5rem;text-align:center">#</th>
@@ -121,7 +121,7 @@ include __DIR__ . '/includes/header.php';
   </div>
 
   <div class="mt-4 d-flex gap-2 align-items-center">
-    <button type="button" class="btn-ahdeco" onclick="saveFirmantes()">
+    <button type="button" class="btn-sithsa" onclick="saveFirmantes()">
       <i class="fas fa-save"></i> Guardar cambios
     </button>
     <span id="save-status" style="font-size:.82rem;color:var(--text-3)"></span>
@@ -131,7 +131,7 @@ include __DIR__ . '/includes/header.php';
 <?php
 $extraJs = <<<'JS'
 async function saveFirmantes() {
-  const btn = document.querySelector('.btn-ahdeco');
+  const btn = document.querySelector('.btn-sithsa');
   const status = document.getElementById('save-status');
   btn.disabled = true;
   status.textContent = 'Guardando…';

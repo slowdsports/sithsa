@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -136,7 +136,7 @@ $empClass = $balEmp > 0 ? '#d97706' : ($balEmp < 0 ? '#16a34a' : '#64748b');
 
   <!-- Detalle de viajes -->
   <div class="card-body p-0">
-    <table class="table-ahdeco w-100 mb-0">
+    <table class="table-sithsa w-100 mb-0">
       <thead>
         <tr>
           <th>Número</th>
@@ -217,7 +217,7 @@ $empClass = $balEmp > 0 ? '#d97706' : ($balEmp < 0 ? '#16a34a' : '#64748b');
 <!-- Totales globales -->
 <div class="card" style="border:2px solid var(--border)">
   <div class="card-body p-0">
-    <table class="table-ahdeco w-100 mb-0">
+    <table class="table-sithsa w-100 mb-0">
       <tfoot>
         <tr style="font-weight:700;font-size:.9rem;background:var(--surface-2)">
           <td colspan="5" class="text-end" style="padding:10px 12px">TOTAL GENERAL</td>

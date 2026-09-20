@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -288,7 +288,7 @@ $tituloReporte = match($tipo) {
   <div class="card-body p-0">
 
     <?php if ($tipo === 'ihss'): ?>
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead>
         <tr>
           <th>Identidad</th><th>Empleado</th><th>Cargo</th>
@@ -320,14 +320,14 @@ $tituloReporte = match($tipo) {
           <td colspan="4" class="text-end">TOTALES:</td>
           <td class="text-end font-mono"><?= lps($totals['emp']) ?></td>
           <td class="text-end font-mono"><?= lps($totals['pat']) ?></td>
-          <td class="text-end font-mono" style="color:var(--ahdeco)"><?= lps($totals['total']) ?></td>
+          <td class="text-end font-mono" style="color:var(--sithsa)"><?= lps($totals['total']) ?></td>
         </tr>
         <?php endif; ?>
       </tbody>
     </table>
 
     <?php elseif ($tipo === 'rap'): ?>
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead>
         <tr>
           <th>Identidad</th><th>Empleado</th><th>Cargo</th>
@@ -359,14 +359,14 @@ $tituloReporte = match($tipo) {
           <td colspan="4" class="text-end">TOTALES:</td>
           <td class="text-end font-mono"><?= lps($totals['emp']) ?></td>
           <td class="text-end font-mono"><?= lps($totals['pat']) ?></td>
-          <td class="text-end font-mono" style="color:var(--ahdeco)"><?= lps($totals['total']) ?></td>
+          <td class="text-end font-mono" style="color:var(--sithsa)"><?= lps($totals['total']) ?></td>
         </tr>
         <?php endif; ?>
       </tbody>
     </table>
 
     <?php elseif ($tipo === 'sar'): ?>
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead>
         <tr>
           <th>Identidad</th><th>RTN</th><th>Empleado</th><th>Cargo</th>
@@ -397,7 +397,7 @@ $tituloReporte = match($tipo) {
         <tr class="fw-bold" style="background:var(--surface-2)">
           <td colspan="4" class="text-end">TOTALES:</td>
           <td class="text-end font-mono"><?= lps($totals['devengado']) ?></td>
-          <td class="text-end font-mono" style="color:var(--ahdeco)"><?= lps($totals['isr']) ?></td>
+          <td class="text-end font-mono" style="color:var(--sithsa)"><?= lps($totals['isr']) ?></td>
           <td></td>
         </tr>
         <?php endif; ?>

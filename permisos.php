@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -96,11 +96,11 @@ include __DIR__ . '/includes/header.php';
 <div class="page-header">
   <h1><i class="fas fa-user-clock"></i> Permisos y Ausencias</h1>
   <?php if ($action === 'list'): ?>
-  <button class="btn-ahdeco" data-bs-toggle="modal" data-bs-target="#modal-nuevo">
+  <button class="btn-sithsa" data-bs-toggle="modal" data-bs-target="#modal-nuevo">
     <i class="fas fa-plus"></i> Nuevo Permiso
   </button>
   <?php else: ?>
-  <a href="permisos.php" class="btn-ahdeco-outline"><i class="fas fa-arrow-left"></i> Volver</a>
+  <a href="permisos.php" class="btn-sithsa-outline"><i class="fas fa-arrow-left"></i> Volver</a>
   <?php endif; ?>
 </div>
 
@@ -111,7 +111,7 @@ include __DIR__ . '/includes/header.php';
 <div class="card mb-4">
   <div class="card-header"><i class="fas fa-chart-pie"></i> Días de Permiso Aprobados — <?= date('Y') ?></div>
   <div class="card-body p-0">
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead><tr><th>Empleado</th><?php foreach ($TIPOS as $k => $t): ?><th class="text-center" style="font-size:.7rem"><?= $t['label'] ?></th><?php endforeach; ?></tr></thead>
       <tbody>
         <?php
@@ -137,7 +137,7 @@ include __DIR__ . '/includes/header.php';
 <!-- Lista de permisos -->
 <div class="card">
   <div class="card-body p-0">
-    <table id="tbl-per" class="table-ahdeco w-100">
+    <table id="tbl-per" class="table-sithsa w-100">
       <thead><tr><th>Número</th><th>Empleado</th><th>Tipo</th><th>Inicio</th><th>Fin</th><th>Días</th><th>Goce</th><th>Estado</th><th></th></tr></thead>
       <tbody>
         <?php foreach ($lista as $p):
@@ -271,7 +271,7 @@ include __DIR__ . '/includes/header.php';
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn-ahdeco" onclick="crearPermiso()"><i class="fas fa-save"></i> Guardar</button>
+        <button type="button" class="btn-sithsa" onclick="crearPermiso()"><i class="fas fa-save"></i> Guardar</button>
       </div>
     </div>
   </div>

@@ -1,12 +1,12 @@
--- ============================================================
--- AHDECO - Sistema de Administración y Finanzas
+﻿-- ============================================================
+-- SITHSA - Sistema de Administración y Finanzas
 -- Asociación Hondureña para el Desarrollo Integral Comunitario
 -- ============================================================
 
 -- Eliminar y recrear limpiamente para evitar errores InnoDB #1932
-DROP DATABASE IF EXISTS ahdeco_admin;
-CREATE DATABASE ahdeco_admin CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE ahdeco_admin;
+DROP DATABASE IF EXISTS sithsa_admin;
+CREATE DATABASE sithsa_admin CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE sithsa_admin;
 
 SET FOREIGN_KEY_CHECKS = 0;
 

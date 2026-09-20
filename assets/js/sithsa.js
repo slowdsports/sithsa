@@ -1,4 +1,4 @@
-/* AHDECO - Sistema de Administración | JS principal */
+﻿/* SITHSA - Sistema de Administración | JS principal */
 'use strict';
 
 // ── Toast notifications ──────────────────────────────────────────
@@ -46,9 +46,9 @@ function toggleTheme() {
   const isDark  = html.getAttribute('data-theme') === 'dark';
   const next    = isDark ? 'light' : 'dark';
   html.setAttribute('data-theme', next);
-  localStorage.setItem('ahdeco-theme', next);
+  localStorage.setItem('sithsa-theme', next);
   _syncThemeIcon(next);
-  document.dispatchEvent(new CustomEvent('ahdeco:themechange', { detail: { theme: next } }));
+  document.dispatchEvent(new CustomEvent('sithsa:themechange', { detail: { theme: next } }));
 }
 
 function _syncThemeIcon(theme) {
@@ -64,7 +64,7 @@ function _syncThemeIcon(theme) {
 // ── Sidebar toggle ────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   // Sync icon with stored theme on load
-  _syncThemeIcon(localStorage.getItem('ahdeco-theme') || 'light');
+  _syncThemeIcon(localStorage.getItem('sithsa-theme') || 'light');
   const sidebar = document.getElementById('sidebar');
   const main    = document.getElementById('main-content');
   const btn     = document.getElementById('btn-toggle-sidebar');
@@ -239,8 +239,8 @@ function printDoc(selector = '#print-area') {
   if (!content) return window.print();
   const w = window.open('', '_blank');
   w.document.write(`<!DOCTYPE html><html><head>
-    <title>AHDECO - Documento</title>
-    <link rel="stylesheet" href="/Administracion/assets/css/ahdeco.css">
+    <title>SITHSA - Documento</title>
+    <link rel="stylesheet" href="/Administracion/assets/css/sithsa.css">
     <style>body{padding:20px} @media print{.no-print{display:none}}</style>
   </head><body>${content}</body></html>`);
   w.document.close();
@@ -320,9 +320,9 @@ function _ahdCountUp(el) {
   })(t0);
 }
 
-// Ripple effect on button clicks (.btn, .btn-ahdeco, .btn-ahdeco-outline)
+// Ripple effect on button clicks (.btn, .btn-sithsa, .btn-sithsa-outline)
 document.addEventListener('click', e => {
-  const btn = e.target.closest('.btn:not(.btn-link), .btn-ahdeco, .btn-ahdeco-outline');
+  const btn = e.target.closest('.btn:not(.btn-link), .btn-sithsa, .btn-sithsa-outline');
   if (!btn) return;
   const rect = btn.getBoundingClientRect();
   const size = Math.max(rect.width, rect.height) * 2.2;

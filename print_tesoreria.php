@@ -1,11 +1,11 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
 requireLogin();
 
 $config  = getAllConfig($pdo);
-$org     = $config['nombre_organizacion'] ?? 'AHDECO';
+$org     = $config['nombre_organizacion'] ?? 'SITHSA';
 $orgFull = $config['nombre_completo']     ?? 'Asociación Hondureña para el Desarrollo Integral Comunitario';
 $orgDir  = $config['direccion']           ?? 'Tegucigalpa, Honduras';
 

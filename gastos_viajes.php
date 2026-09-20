@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -100,16 +100,16 @@ include __DIR__ . '/includes/header.php';
 <div class="page-header">
   <h1><i class="fas fa-hand-holding-dollar"></i> Anticipos (Viáticos y Compras)</h1>
   <?php if ($action === 'list'): ?>
-  <a href="?action=nuevo" class="btn-ahdeco"><i class="fas fa-plus"></i> Nuevo Anticipo</a>
+  <a href="?action=nuevo" class="btn-sithsa"><i class="fas fa-plus"></i> Nuevo Anticipo</a>
   <?php else: ?>
-  <a href="?" class="btn-ahdeco-outline"><i class="fas fa-arrow-left"></i> Volver</a>
+  <a href="?" class="btn-sithsa-outline"><i class="fas fa-arrow-left"></i> Volver</a>
   <?php endif; ?>
 </div>
 
 <?php if ($action === 'list'): ?>
 <div class="card">
   <div class="card-body p-0">
-    <table id="tbl-gv" class="table-ahdeco w-100">
+    <table id="tbl-gv" class="table-sithsa w-100">
       <thead><tr><th>Proceso</th><th>Número</th><th>Tipo</th><th>Empleado</th><th>Destino / Concepto</th><th>Salida</th><th>Regreso</th><th>Monto Anticipo</th><th>Estado</th><th></th></tr></thead>
       <tbody>
         <?php foreach ($listaViajes as $r): ?>
@@ -180,7 +180,7 @@ include __DIR__ . '/includes/header.php';
 <div class="card mb-3">
   <div class="card-header"><i class="fas fa-list"></i> Desglose del Anticipo Solicitado</div>
   <div class="card-body p-0">
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead><tr><th>#</th><th>Descripción del Gasto</th><th>Cuenta Contable</th><th>Monto</th></tr></thead>
       <tbody>
         <?php $i=1; foreach ($detalle as $d): ?>
@@ -210,7 +210,7 @@ include __DIR__ . '/includes/header.php';
     <a href="<?= BASE_URL ?>gastos_solicitud.php?action=nuevo&viaje_id=<?= $gv['id'] ?>" class="ms-auto btn btn-sm btn-outline-success py-0"><i class="fas fa-plus"></i> Nueva Liquidación</a>
   </div>
   <div class="card-body p-0">
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead><tr><th>Número</th><th>Fecha</th><th>Descripción</th><th>Total</th><th>Estado</th><th></th></tr></thead>
       <tbody>
         <?php foreach ($liquidaciones as $liq): ?>
@@ -306,7 +306,7 @@ include __DIR__ . '/includes/header.php';
 
       <div class="form-section-title mt-3">Desglose del Anticipo Solicitado</div>
       <div class="table-responsive">
-        <table class="table-ahdeco w-100">
+        <table class="table-sithsa w-100">
           <thead><tr><th>#</th><th>Descripción del Gasto</th><th>Cuenta Contable</th><th style="width:10rem">Monto (L.)</th><th></th></tr></thead>
           <tbody id="tbody-gv-items">
             <?php
@@ -337,7 +337,7 @@ include __DIR__ . '/includes/header.php';
       <button type="button" class="btn btn-sm btn-outline-success mt-2" onclick="addGvRow()"><i class="fas fa-plus"></i> Agregar Línea</button>
 
       <div class="mt-4 d-flex gap-2">
-        <button type="submit" class="btn-ahdeco"><i class="fas fa-save"></i> Guardar</button>
+        <button type="submit" class="btn-sithsa"><i class="fas fa-save"></i> Guardar</button>
         <a href="?" class="btn btn-outline-secondary btn-sm">Cancelar</a>
       </div>
     </form>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -40,10 +40,10 @@ include __DIR__ . '/includes/header.php';
 ?>
 <div class="page-header">
   <h1><i class="fas fa-truck"></i> Proveedores</h1>
-  <button class="btn-ahdeco" data-bs-toggle="modal" data-bs-target="#modal-prov"><i class="fas fa-plus"></i> Nuevo Proveedor</button>
+  <button class="btn-sithsa" data-bs-toggle="modal" data-bs-target="#modal-prov"><i class="fas fa-plus"></i> Nuevo Proveedor</button>
 </div>
 <div class="card"><div class="card-body p-0">
-  <table id="tbl-prov" class="table-ahdeco w-100">
+  <table id="tbl-prov" class="table-sithsa w-100">
     <thead><tr><th>Código</th><th>Nombre</th><th>RTN</th><th>Contacto</th><th>Teléfono</th><th>Cuenta Bancaria</th><th>Categoría</th><th>Estado</th><th></th></tr></thead>
     <tbody>
       <?php foreach($proveedores as $p): ?>
@@ -129,7 +129,7 @@ include __DIR__ . '/includes/header.php';
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn-ahdeco" onclick="saveProv()"><i class="fas fa-save"></i> Guardar</button>
+        <button type="button" class="btn-sithsa" onclick="saveProv()"><i class="fas fa-save"></i> Guardar</button>
       </div>
     </div>
   </div>

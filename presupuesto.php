@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -71,7 +71,7 @@ include __DIR__ . '/includes/header.php';
     <select class="form-select form-select-sm" id="sel-anio" onchange="location.href='presupuesto.php?anio='+this.value+'&proyecto_id=<?= $proyId ?>'" style="width:100px">
       <?php for($y=2022;$y<=date('Y')+2;$y++): ?><option value="<?= $y ?>" <?= $y==$anio?'selected':'' ?>><?= $y ?></option><?php endfor; ?>
     </select>
-    <button class="btn-ahdeco" data-bs-toggle="modal" data-bs-target="#modal-presupuesto"><i class="fas fa-edit"></i> Editar Presupuesto</button>
+    <button class="btn-sithsa" data-bs-toggle="modal" data-bs-target="#modal-presupuesto"><i class="fas fa-edit"></i> Editar Presupuesto</button>
   </div>
 </div>
 
@@ -109,7 +109,7 @@ $pct = $totPres > 0 ? min(100, round($totEjec / $totPres * 100, 1)) : 0;
 <div class="card">
   <div class="card-header"><i class="fas fa-table"></i> Ejecución por Cuenta</div>
   <div class="card-body p-0">
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead><tr><th>Cuenta</th><th>Nombre</th><th class="text-end">Presupuestado</th><th class="text-end">Ejecutado</th><th class="text-end">Saldo</th><th style="width:200px">% Ejecución</th></tr></thead>
       <tbody>
         <?php foreach($presupuesto as $r):
@@ -146,7 +146,7 @@ $pct = $totPres > 0 ? min(100, round($totEjec / $totPres * 100, 1)) : 0;
 <div class="card"><div class="card-body text-center py-5 text-muted">
   <i class="fas fa-chart-pie fa-3x mb-3 d-block"></i>
   No hay presupuesto definido para <?= $anio ?>.
-  <br><button class="btn-ahdeco mt-3" data-bs-toggle="modal" data-bs-target="#modal-presupuesto"><i class="fas fa-plus"></i> Definir Presupuesto</button>
+  <br><button class="btn-sithsa mt-3" data-bs-toggle="modal" data-bs-target="#modal-presupuesto"><i class="fas fa-plus"></i> Definir Presupuesto</button>
 </div></div>
 <?php endif; ?>
 
@@ -160,7 +160,7 @@ $pct = $totPres > 0 ? min(100, round($totEjec / $totPres * 100, 1)) : 0;
           <input type="hidden" name="csrf_token" value="<?= csrfToken() ?>">
           <input type="hidden" name="_action" value="guardar">
           <input type="hidden" name="items" id="pres-items">
-          <table class="table-ahdeco w-100">
+          <table class="table-sithsa w-100">
             <thead><tr><th>Cuenta</th><th>Nombre</th><th>Monto Presupuestado (L.)</th><th>Notas</th></tr></thead>
             <tbody>
               <?php
@@ -187,7 +187,7 @@ $pct = $totPres > 0 ? min(100, round($totEjec / $totPres * 100, 1)) : 0;
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn-ahdeco" onclick="savePresupuesto()"><i class="fas fa-save"></i> Guardar</button>
+        <button type="button" class="btn-sithsa" onclick="savePresupuesto()"><i class="fas fa-save"></i> Guardar</button>
       </div>
     </div>
   </div>

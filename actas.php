@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -84,9 +84,9 @@ include __DIR__ . '/includes/header.php';
 <div class="page-header">
   <h1><i class="fas fa-clipboard-list"></i> Actas de Reunión</h1>
   <?php if ($action === 'list'): ?>
-  <a href="?action=nuevo" class="btn-ahdeco"><i class="fas fa-plus"></i> Nueva Acta</a>
+  <a href="?action=nuevo" class="btn-sithsa"><i class="fas fa-plus"></i> Nueva Acta</a>
   <?php else: ?>
-  <a href="actas.php" class="btn-ahdeco-outline"><i class="fas fa-arrow-left"></i> Volver</a>
+  <a href="actas.php" class="btn-sithsa-outline"><i class="fas fa-arrow-left"></i> Volver</a>
   <?php endif; ?>
 </div>
 
@@ -94,7 +94,7 @@ include __DIR__ . '/includes/header.php';
 
 <div class="card">
   <div class="card-body p-0">
-    <table id="tbl-actas" class="table-ahdeco w-100">
+    <table id="tbl-actas" class="table-sithsa w-100">
       <thead>
         <tr>
           <th>Número</th><th>Asunto</th><th>Fecha</th><th>Lugar</th><th>Estado</th><th></th>
@@ -257,7 +257,7 @@ include __DIR__ . '/includes/header.php';
       </div>
 
       <div class="mt-4 d-flex gap-2">
-        <button type="submit" class="btn-ahdeco"><i class="fas fa-save"></i> Guardar</button>
+        <button type="submit" class="btn-sithsa"><i class="fas fa-save"></i> Guardar</button>
         <a href="actas.php" class="btn btn-outline-secondary btn-sm">Cancelar</a>
       </div>
     </form>

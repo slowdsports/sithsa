@@ -1,5 +1,5 @@
-/* ================================================================
-   AHDECO Admin — Material-inspired Design System v2
+﻿/* ================================================================
+   SITHSA Admin — Material-inspired Design System v2
    Inter font | #1B6BA8 primary | Light + Dark mode
 ================================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -331,20 +331,20 @@ a:hover { color: var(--primary-dark); }
 .stat-card .stat-value { font-size: 1.6rem; font-weight: 700; line-height: 1; }
 
 /* ── Buttons ──────────────────────────────────────────────────── */
-.btn-ahdeco {
+.btn-sithsa {
   background: var(--primary); color: #fff; border: none;
   padding: .42rem .9rem; border-radius: var(--r-xs);
   font-size: .84rem; font-weight: 500; cursor: pointer;
   display: inline-flex; align-items: center; gap: .4rem;
   transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
 }
-.btn-ahdeco:hover {
+.btn-sithsa:hover {
   background: var(--primary-dark); color: #fff;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(var(--primary-rgb), .35);
 }
 
-.btn-ahdeco-outline {
+.btn-sithsa-outline {
   background: transparent; color: var(--primary);
   border: 1px solid var(--primary);
   padding: .42rem .9rem; border-radius: var(--r-xs);
@@ -352,7 +352,7 @@ a:hover { color: var(--primary-dark); }
   display: inline-flex; align-items: center; gap: .4rem;
   transition: all var(--transition);
 }
-.btn-ahdeco-outline:hover {
+.btn-sithsa-outline:hover {
   background: var(--primary); color: #fff;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(var(--primary-rgb), .3);
@@ -363,21 +363,21 @@ a:hover { color: var(--primary-dark); }
 .btn:not(.btn-link):not(.btn-logout):active { transform: translateY(0); }
 
 /* ── Tables ───────────────────────────────────────────────────── */
-.table-ahdeco { width: 100%; border-collapse: collapse; font-size: .85rem; }
+.table-sithsa { width: 100%; border-collapse: collapse; font-size: .85rem; }
 
-.table-ahdeco thead tr { background: var(--surface-2); border-bottom: 1px solid var(--border); }
-.table-ahdeco thead th {
+.table-sithsa thead tr { background: var(--surface-2); border-bottom: 1px solid var(--border); }
+.table-sithsa thead th {
   padding: .6rem .9rem;
   font-weight: 600; font-size: .69rem;
   text-transform: uppercase; letter-spacing: .07em;
   color: var(--text-2); white-space: nowrap;
 }
 
-.table-ahdeco tbody tr { border-bottom: 1px solid var(--border); }
-.table-ahdeco tbody tr:hover { background: var(--surface-2); }
-.table-ahdeco tbody td { padding: .55rem .9rem; vertical-align: middle; color: var(--text); }
+.table-sithsa tbody tr { border-bottom: 1px solid var(--border); }
+.table-sithsa tbody tr:hover { background: var(--surface-2); }
+.table-sithsa tbody td { padding: .55rem .9rem; vertical-align: middle; color: var(--text); }
 
-.table-ahdeco tfoot td {
+.table-sithsa tfoot td {
   background: var(--surface-2); font-weight: 600;
   padding: .6rem .9rem;
   border-top: 2px solid var(--border);
@@ -748,13 +748,13 @@ a:hover { color: var(--primary-dark); }
   border-bottom-color: rgba(255,255,255,.07) !important;
 }
 
-/* Dark — .table-ahdeco */
-[data-theme="dark"] .table-ahdeco thead tr { background: var(--surface-2); border-bottom-color: rgba(255,255,255,.07); }
-[data-theme="dark"] .table-ahdeco thead th { color: var(--text-2); }
-[data-theme="dark"] .table-ahdeco tbody tr { border-bottom-color: rgba(255,255,255,.07); }
-[data-theme="dark"] .table-ahdeco tbody tr:hover { background: rgba(139,92,246,.05); }
-[data-theme="dark"] .table-ahdeco tbody td { color: var(--text); }
-[data-theme="dark"] .table-ahdeco tfoot td { background: var(--surface-2); border-top-color: rgba(255,255,255,.07); color: var(--text-2); }
+/* Dark — .table-sithsa */
+[data-theme="dark"] .table-sithsa thead tr { background: var(--surface-2); border-bottom-color: rgba(255,255,255,.07); }
+[data-theme="dark"] .table-sithsa thead th { color: var(--text-2); }
+[data-theme="dark"] .table-sithsa tbody tr { border-bottom-color: rgba(255,255,255,.07); }
+[data-theme="dark"] .table-sithsa tbody tr:hover { background: rgba(139,92,246,.05); }
+[data-theme="dark"] .table-sithsa tbody td { color: var(--text); }
+[data-theme="dark"] .table-sithsa tfoot td { background: var(--surface-2); border-top-color: rgba(255,255,255,.07); color: var(--text-2); }
 
 /* Dark — DataTables */
 [data-theme="dark"] .dataTables_wrapper { color: #f0f0f5; }
@@ -963,7 +963,7 @@ a.kpi-card:hover::after { opacity: 1; transform: translateX(0); }
   from { opacity: 0; transform: translateY(-9px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-@keyframes ahdFadeIn {
+@keyframes sithsaFadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
@@ -993,7 +993,7 @@ a.kpi-card:hover::after { opacity: 1; transform: translateX(0); }
 [data-theme="dark"] .modal-title  { color: var(--text); }
 
 /* ── Sticky thead para tablas con scroll propio ──────────────── */
-.table-scroll .table-ahdeco thead th {
+.table-scroll .table-sithsa thead th {
   position: sticky; top: 0; z-index: 2;
   background: var(--surface-2);
   box-shadow: 0 1px 0 var(--border);
@@ -1067,19 +1067,19 @@ a.kpi-card:hover .kpi-icon,
 .badge.bg-warning { animation: ahdPulse 2.3s ease infinite; }
 
 /* ── Table rows — staggered fade in ──────────────────────────── */
-.table-ahdeco tbody tr { animation: ahdFadeIn .28s ease both; }
-.table-ahdeco tbody tr:nth-child(2)  { animation-delay: .04s; }
-.table-ahdeco tbody tr:nth-child(3)  { animation-delay: .08s; }
-.table-ahdeco tbody tr:nth-child(4)  { animation-delay: .12s; }
-.table-ahdeco tbody tr:nth-child(5)  { animation-delay: .16s; }
-.table-ahdeco tbody tr:nth-child(6)  { animation-delay: .20s; }
-.table-ahdeco tbody tr:nth-child(7)  { animation-delay: .24s; }
-.table-ahdeco tbody tr:nth-child(8)  { animation-delay: .28s; }
-.table-ahdeco tbody tr:nth-child(9)  { animation-delay: .32s; }
-.table-ahdeco tbody tr:nth-child(10) { animation-delay: .36s; }
+.table-sithsa tbody tr { animation: sithsaFadeIn .28s ease both; }
+.table-sithsa tbody tr:nth-child(2)  { animation-delay: .04s; }
+.table-sithsa tbody tr:nth-child(3)  { animation-delay: .08s; }
+.table-sithsa tbody tr:nth-child(4)  { animation-delay: .12s; }
+.table-sithsa tbody tr:nth-child(5)  { animation-delay: .16s; }
+.table-sithsa tbody tr:nth-child(6)  { animation-delay: .20s; }
+.table-sithsa tbody tr:nth-child(7)  { animation-delay: .24s; }
+.table-sithsa tbody tr:nth-child(8)  { animation-delay: .28s; }
+.table-sithsa tbody tr:nth-child(9)  { animation-delay: .32s; }
+.table-sithsa tbody tr:nth-child(10) { animation-delay: .36s; }
 
 /* ── Workflow steps — slide in ───────────────────────────────── */
-.wf-step { animation: ahdFadeIn .4s ease both; }
+.wf-step { animation: sithsaFadeIn .4s ease both; }
 .wf-step:nth-child(1) { animation-delay: .05s; }
 .wf-step:nth-child(2) { animation-delay: .10s; }
 .wf-step:nth-child(3) { animation-delay: .15s; }
@@ -1087,7 +1087,7 @@ a.kpi-card:hover .kpi-icon,
 .wf-step:nth-child(5) { animation-delay: .25s; }
 
 /* ── Trace chain steps ───────────────────────────────────────── */
-.trace-step { animation: ahdFadeIn .4s ease both; }
+.trace-step { animation: sithsaFadeIn .4s ease both; }
 .trace-step:nth-child(odd) { animation-delay: .06s; }
 
 /* ── Dark mode — ambient purple radial glow ──────────────────── */
@@ -1124,7 +1124,7 @@ a.kpi-card:hover .kpi-icon,
 }
 
 /* ── Doc-links bar — slide in ────────────────────────────────── */
-.doc-links-bar { animation: ahdFadeIn .4s ease both; }
+.doc-links-bar { animation: sithsaFadeIn .4s ease both; }
 
 /* ── Reduced motion — respect user preference ────────────────── */
 @media (prefers-reduced-motion: reduce) {

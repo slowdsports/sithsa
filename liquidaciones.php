@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -255,11 +255,11 @@ include __DIR__ . '/includes/header.php';
 <div class="page-header">
   <h1><i class="fas fa-file-invoice"></i> Liquidaciones de Empleados</h1>
   <?php if ($action === 'list'): ?>
-  <button class="btn-ahdeco" data-bs-toggle="modal" data-bs-target="#modal-nueva">
+  <button class="btn-sithsa" data-bs-toggle="modal" data-bs-target="#modal-nueva">
     <i class="fas fa-plus"></i> Nueva Liquidación
   </button>
   <?php else: ?>
-  <a href="liquidaciones.php" class="btn-ahdeco-outline"><i class="fas fa-arrow-left"></i> Volver</a>
+  <a href="liquidaciones.php" class="btn-sithsa-outline"><i class="fas fa-arrow-left"></i> Volver</a>
   <?php endif; ?>
 </div>
 
@@ -268,7 +268,7 @@ include __DIR__ . '/includes/header.php';
 <div class="card">
   <div class="card-header"><i class="fas fa-list"></i> Liquidaciones Registradas</div>
   <div class="card-body p-0">
-    <table id="tbl-liq" class="table-ahdeco w-100">
+    <table id="tbl-liq" class="table-sithsa w-100">
       <thead>
         <tr>
           <th>Número</th><th>Empleado</th><th>Cargo</th><th>Motivo</th>
@@ -361,7 +361,7 @@ include __DIR__ . '/includes/header.php';
 <div class="card mb-3">
   <div class="card-header"><i class="fas fa-calculator"></i> Desglose de Liquidación</div>
   <div class="card-body p-0">
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead>
         <tr><th>Concepto</th><th>Referencia Legal</th><th class="text-end">Monto</th></tr>
       </thead>
@@ -418,7 +418,7 @@ include __DIR__ . '/includes/header.php';
         <?php endif; ?>
         <tr class="fw-bold" style="background:var(--surface-2)">
           <td colspan="2">TOTAL A PAGAR</td>
-          <td class="text-end font-mono" style="font-size:1.1rem;color:var(--ahdeco)"><?= lps($liq['total']) ?></td>
+          <td class="text-end font-mono" style="font-size:1.1rem;color:var(--sithsa)"><?= lps($liq['total']) ?></td>
         </tr>
       </tbody>
     </table>
@@ -535,7 +535,7 @@ include __DIR__ . '/includes/header.php';
         <button type="button" class="btn btn-outline-secondary" id="btn-recalc" onclick="autoCalcular()">
           <i class="fas fa-calculator"></i> Recalcular
         </button>
-        <button type="button" class="btn-ahdeco" onclick="guardarLiq()">
+        <button type="button" class="btn-sithsa" onclick="guardarLiq()">
           <i class="fas fa-save"></i> Guardar
         </button>
       </div>

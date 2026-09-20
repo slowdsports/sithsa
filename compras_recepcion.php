@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -83,15 +83,15 @@ include __DIR__ . '/includes/header.php';
 <div class="page-header">
   <h1><i class="fas fa-boxes-stacked"></i> Nota de Recepción</h1>
   <?php if ($action==='list'): ?>
-  <a href="?action=nuevo" class="btn-ahdeco"><i class="fas fa-plus"></i> Nueva NR</a>
+  <a href="?action=nuevo" class="btn-sithsa"><i class="fas fa-plus"></i> Nueva NR</a>
   <?php else: ?>
-  <a href="?" class="btn-ahdeco-outline"><i class="fas fa-arrow-left"></i> Volver</a>
+  <a href="?" class="btn-sithsa-outline"><i class="fas fa-arrow-left"></i> Volver</a>
   <?php endif; ?>
 </div>
 
 <?php if ($action==='list'): ?>
 <div class="card"><div class="card-body p-0">
-  <table id="tbl-nr" class="table-ahdeco w-100">
+  <table id="tbl-nr" class="table-sithsa w-100">
     <thead><tr><th>Número</th><th>Fecha</th><th>OC Ref.</th><th>Proveedor</th><th>Factura</th><th>Estado</th><th></th></tr></thead>
     <tbody>
       <?php foreach($lista as $r): ?>
@@ -131,7 +131,7 @@ include __DIR__ . '/includes/header.php';
 <div class="card">
   <div class="card-header"><i class="fas fa-list"></i> Artículos Recibidos</div>
   <div class="card-body p-0">
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead><tr><th>#</th><th>Descripción</th><th>Unidad</th><th>Cant. Pedida</th><th>Cant. Recibida</th><th>P. Unit.</th><th>Total</th><th>Estado</th><th>Observación</th></tr></thead>
       <tbody>
         <?php $i=1; foreach($detalle as $d): ?>
@@ -180,7 +180,7 @@ include __DIR__ . '/includes/header.php';
     </div>
     <div class="form-section-title">Artículos Recibidos</div>
     <div class="table-responsive">
-      <table class="table-ahdeco w-100">
+      <table class="table-sithsa w-100">
         <thead><tr><th>#</th><th>Descripción</th><th>Unidad</th><th>Cant. Pedida</th><th>Cant. Recibida</th><th>Precio Unit.</th><th>Total</th><th>Estado</th><th>Observación</th><th></th></tr></thead>
         <tbody id="tbody-items">
           <?php
@@ -208,7 +208,7 @@ include __DIR__ . '/includes/header.php';
     </div>
     <button type="button" class="btn btn-sm btn-outline-success mt-2" onclick="addNrRow()"><i class="fas fa-plus"></i> Agregar Ítem</button>
     <div class="mt-4 d-flex gap-2">
-      <button type="submit" class="btn-ahdeco"><i class="fas fa-save"></i> Registrar Recepción</button>
+      <button type="submit" class="btn-sithsa"><i class="fas fa-save"></i> Registrar Recepción</button>
       <a href="?" class="btn btn-outline-secondary btn-sm">Cancelar</a>
     </div>
   </form>

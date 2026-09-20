@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -166,9 +166,9 @@ include __DIR__ . '/includes/header.php';
 <div class="page-header">
   <h1><i class="fas fa-cash-register"></i> Caja Chica</h1>
   <?php if ($action === 'list'): ?>
-  <a href="?action=nuevo" class="btn-ahdeco"><i class="fas fa-plus"></i> Nueva Caja Chica</a>
+  <a href="?action=nuevo" class="btn-sithsa"><i class="fas fa-plus"></i> Nueva Caja Chica</a>
   <?php else: ?>
-  <a href="caja_chica.php" class="btn-ahdeco-outline"><i class="fas fa-arrow-left"></i> Volver</a>
+  <a href="caja_chica.php" class="btn-sithsa-outline"><i class="fas fa-arrow-left"></i> Volver</a>
   <?php endif; ?>
 </div>
 
@@ -181,7 +181,7 @@ include __DIR__ . '/includes/header.php';
 <div class="card mb-4">
   <div class="card-header"><i class="fas fa-chart-bar"></i> Gastos por Cuenta Contable — Todas las Cajas</div>
   <div class="card-body p-0">
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead>
         <tr>
           <th>Cuenta Contable</th>
@@ -223,7 +223,7 @@ include __DIR__ . '/includes/header.php';
 <!-- Tabla de cajas -->
 <div class="card mb-4">
   <div class="card-body p-0">
-    <table id="tbl-cc" class="table-ahdeco w-100">
+    <table id="tbl-cc" class="table-sithsa w-100">
       <thead>
         <tr>
           <th>Número</th><th>Responsable</th><th>Cargo</th>
@@ -359,7 +359,7 @@ include __DIR__ . '/includes/header.php';
 <div class="card mb-3">
   <div class="card-header"><i class="fas fa-receipt"></i> Detalle de Gastos</div>
   <div class="card-body p-0">
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead>
         <tr>
           <th>#</th><th>Fecha</th><th>Cuenta Contable</th><th>Descripción</th>
@@ -385,7 +385,7 @@ include __DIR__ . '/includes/header.php';
       <tfoot>
         <tr>
           <td colspan="6" class="text-end fw-bold">Total Gastos:</td>
-          <td class="text-end font-mono fw-bold" style="color:var(--ahdeco)"><?= lps($cc['total_gastos']) ?></td>
+          <td class="text-end font-mono fw-bold" style="color:var(--sithsa)"><?= lps($cc['total_gastos']) ?></td>
         </tr>
       </tfoot>
     </table>
@@ -397,7 +397,7 @@ include __DIR__ . '/includes/header.php';
 <div class="card">
   <div class="card-header"><i class="fas fa-chart-pie"></i> Resumen por Cuenta Contable</div>
   <div class="card-body p-0">
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead><tr><th>Cuenta Contable</th><th class="text-end">Subtotal</th><th class="text-end">%</th></tr></thead>
       <tbody>
         <?php foreach ($resumenCuentas as $r):
@@ -411,7 +411,7 @@ include __DIR__ . '/includes/header.php';
         <?php endforeach; ?>
         <tr style="font-weight:700;background:var(--surface-2)">
           <td>TOTAL</td>
-          <td class="text-end font-mono" style="color:var(--ahdeco)"><?= lps($cc['total_gastos']) ?></td>
+          <td class="text-end font-mono" style="color:var(--sithsa)"><?= lps($cc['total_gastos']) ?></td>
           <td></td>
         </tr>
       </tbody>
@@ -462,7 +462,7 @@ include __DIR__ . '/includes/header.php';
         <div class="col-md-2">
           <label class="form-label">Total Gastos</label>
           <div class="form-control bg-light text-end font-mono fw-bold" id="cc-total"
-               style="color:var(--ahdeco)">L. 0.00</div>
+               style="color:var(--sithsa)">L. 0.00</div>
         </div>
         <div class="col-12">
           <label class="form-label">Notas</label>
@@ -473,7 +473,7 @@ include __DIR__ . '/includes/header.php';
 
       <div class="form-section-title mt-3">Detalle de Gastos</div>
       <div class="table-responsive">
-        <table class="table-ahdeco w-100">
+        <table class="table-sithsa w-100">
           <thead>
             <tr>
               <th>#</th>
@@ -541,7 +541,7 @@ include __DIR__ . '/includes/header.php';
           <tfoot>
             <tr>
               <td colspan="6" class="text-end fw-bold">Total Gastos:</td>
-              <td class="font-mono fw-bold text-end" id="cc-total-foot" style="color:var(--ahdeco)">L. 0.00</td>
+              <td class="font-mono fw-bold text-end" id="cc-total-foot" style="color:var(--sithsa)">L. 0.00</td>
               <td></td>
             </tr>
           </tfoot>
@@ -552,7 +552,7 @@ include __DIR__ . '/includes/header.php';
       </button>
 
       <div class="mt-4 d-flex gap-2">
-        <button type="submit" class="btn-ahdeco"><i class="fas fa-save"></i> Guardar</button>
+        <button type="submit" class="btn-sithsa"><i class="fas fa-save"></i> Guardar</button>
         <a href="caja_chica.php" class="btn btn-outline-secondary btn-sm">Cancelar</a>
       </div>
     </form>

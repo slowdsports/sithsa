@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -91,16 +91,16 @@ include __DIR__ . '/includes/header.php';
 <div class="page-header">
   <h1><i class="fas fa-cart-plus"></i> Solicitud de Compra</h1>
   <?php if ($action==='list'): ?>
-  <a href="?action=nuevo" class="btn-ahdeco"><i class="fas fa-plus"></i> Nueva Solicitud</a>
+  <a href="?action=nuevo" class="btn-sithsa"><i class="fas fa-plus"></i> Nueva Solicitud</a>
   <?php else: ?>
-  <a href="?" class="btn-ahdeco-outline"><i class="fas fa-arrow-left"></i> Volver</a>
+  <a href="?" class="btn-sithsa-outline"><i class="fas fa-arrow-left"></i> Volver</a>
   <?php endif; ?>
 </div>
 
 <?php if ($action==='list'): ?>
 <div class="card">
   <div class="card-body p-0">
-    <table id="tbl-sc" class="table-ahdeco w-100">
+    <table id="tbl-sc" class="table-sithsa w-100">
       <thead><tr><th>NÃºmero</th><th>Fecha</th><th>Solicitante</th><th>DescripciÃ³n</th><th>Urgencia</th><th>Presup. Est.</th><th>Estado</th><th></th></tr></thead>
       <tbody>
         <?php foreach ($lista as $r): ?>
@@ -211,7 +211,7 @@ include __DIR__ . '/includes/header.php';
 <div class="card">
   <div class="card-header"><i class="fas fa-list"></i> ArtÃ­culos / Servicios Requeridos</div>
   <div class="card-body p-0">
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead><tr><th>#</th><th>DescripciÃ³n</th><th>Unidad</th><th>Cantidad</th><th>Precio Est.</th><th>Total Est.</th></tr></thead>
       <tbody>
         <?php $i=1; $tot=0; foreach ($detalle as $d): $tot+=$d['cantidad']*($d['precio_estimado']??0); ?>
@@ -248,7 +248,7 @@ include __DIR__ . '/includes/header.php';
       </div>
       <div class="form-section-title">ArtÃ­culos / Servicios Requeridos</div>
       <div class="table-responsive">
-        <table class="table-ahdeco w-100">
+        <table class="table-sithsa w-100">
           <thead><tr><th>#</th><th>DescripciÃ³n *</th><th>Unidad</th><th>Cantidad</th><th>Precio Est. (L.)</th><th>Total</th><th></th></tr></thead>
           <tbody id="tbody-items">
             <?php $initI=$detalle?:[['descripcion'=>'','unidad'=>'','cantidad'=>1,'precio_estimado'=>0]];
@@ -269,7 +269,7 @@ include __DIR__ . '/includes/header.php';
       </div>
       <button type="button" class="btn btn-sm btn-outline-success mt-2" onclick="addScRow()"><i class="fas fa-plus"></i> Agregar Ãtem</button>
       <div class="mt-4 d-flex gap-2">
-        <button type="submit" class="btn-ahdeco"><i class="fas fa-save"></i> Guardar</button>
+        <button type="submit" class="btn-sithsa"><i class="fas fa-save"></i> Guardar</button>
         <a href="?" class="btn btn-outline-secondary btn-sm">Cancelar</a>
       </div>
     </form>

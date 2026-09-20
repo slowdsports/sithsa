@@ -1,10 +1,10 @@
--- ============================================================
--- AHDECO - Corrección del Catálogo Contable de Gastos
+﻿-- ============================================================
+-- SITHSA - Corrección del Catálogo Contable de Gastos
 -- Basado en "Catalogo Contable de Gastos.xlsx"
--- Ejecutar en phpMyAdmin sobre la base: ahdeco_admin
+-- Ejecutar en phpMyAdmin sobre la base: sithsa_admin
 -- ============================================================
 
-USE ahdeco_admin;
+USE sithsa_admin;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ── 1. Eliminar cuentas genéricas de gastos (5000-7999) ──────────
@@ -63,7 +63,7 @@ INSERT INTO cuentas_contables (codigo, nombre, tipo, subtipo, nivel, cuenta_padr
 SELECT '50104', 'BONIFICACIONES', 'gasto', 'Recursos Humanos', 3, id
 FROM cuentas_contables WHERE codigo = '50100';
 
--- Cuenta directamente del catálogo AHDECO
+-- Cuenta directamente del catálogo SITHSA
 INSERT INTO cuentas_contables (codigo, nombre, tipo, subtipo, nivel, cuenta_padre_id)
 SELECT '50105', 'GASTOS DE RECLUTAMIENTO', 'gasto', 'Recursos Humanos', 3, id
 FROM cuentas_contables WHERE codigo = '50100';

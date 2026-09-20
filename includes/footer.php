@@ -1,4 +1,4 @@
-</main><!-- /main-content -->
+﻿</main><!-- /main-content -->
 
 <footer class="app-footer">
   <span>&copy; <?= date('Y') ?> SITHSA &mdash; Sistema de Administración y Finanzas</span>
@@ -15,7 +15,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/i18n/es.js"></script>
-<script src="<?= BASE_URL ?>assets/js/ahdeco.js"></script>
+<script src="<?= BASE_URL ?>assets/js/sithsa.js"></script>
 <script>
   // Flatpickr en todos los campos de fecha
   flatpickr('.date-input', { locale: 'es', dateFormat: 'Y-m-d', allowInput: true });

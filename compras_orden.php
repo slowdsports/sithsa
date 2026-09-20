@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -120,15 +120,15 @@ include __DIR__ . '/includes/header.php';
 <div class="page-header">
   <h1><i class="fas fa-file-circle-check"></i> Orden de Compra</h1>
   <?php if ($action==='list'): ?>
-  <a href="?action=nuevo" class="btn-ahdeco"><i class="fas fa-plus"></i> Nueva OC</a>
+  <a href="?action=nuevo" class="btn-sithsa"><i class="fas fa-plus"></i> Nueva OC</a>
   <?php else: ?>
-  <a href="?" class="btn-ahdeco-outline"><i class="fas fa-arrow-left"></i> Volver</a>
+  <a href="?" class="btn-sithsa-outline"><i class="fas fa-arrow-left"></i> Volver</a>
   <?php endif; ?>
 </div>
 
 <?php if ($action==='list'): ?>
 <div class="card"><div class="card-body p-0">
-  <table id="tbl-oc" class="table-ahdeco w-100">
+  <table id="tbl-oc" class="table-sithsa w-100">
     <thead><tr><th>Número</th><th>Fecha</th><th>Proveedor</th><th>Subtotal</th><th>Descuento</th><th>Impuestos</th><th>Total</th><th>Estado</th><th></th></tr></thead>
     <tbody>
       <?php foreach($lista as $r): ?>
@@ -236,7 +236,7 @@ include __DIR__ . '/includes/header.php';
 <div class="card">
   <div class="card-header"><i class="fas fa-list"></i> Ítems</div>
   <div class="card-body p-0">
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead><tr><th>#</th><th>Descripción</th><th>Unidad</th><th>Cantidad</th><th>Precio Unit.</th><th>Total</th><th>Cuenta</th></tr></thead>
       <tbody>
         <?php $i=1; foreach($detalle as $d): ?>
@@ -291,13 +291,13 @@ include __DIR__ . '/includes/header.php';
         <select name="proyecto_id" class="form-select"><option value="">--</option><?php foreach($proyectos as $p): ?><option value="<?= $p['id'] ?>"><?= htmlspecialchars($p['nombre']) ?></option><?php endforeach; ?></select>
       </div>
       <div class="col-md-4"><label class="form-label">Condiciones de Pago</label><input type="text" name="condiciones_pago" class="form-control" placeholder="ej: Contado, 30 días, 50/50"></div>
-      <div class="col-md-4"><label class="form-label">Lugar de Entrega</label><input type="text" name="lugar_entrega" class="form-control" placeholder="ej: Oficinas AHDECO, Tegucigalpa"></div>
+      <div class="col-md-4"><label class="form-label">Lugar de Entrega</label><input type="text" name="lugar_entrega" class="form-control" placeholder="ej: Oficinas SITHSA, Tegucigalpa"></div>
       <div class="col-md-4"><label class="form-label">Notas</label><input type="text" name="notas" class="form-control"></div>
       <input type="hidden" name="solicitud_id" id="hd-sc" value="<?= $coData['sc_id'] ?? '' ?>">
     </div>
     <div class="form-section-title">Ítems de la Orden</div>
     <div class="table-responsive">
-      <table class="table-ahdeco w-100">
+      <table class="table-sithsa w-100">
         <thead><tr><th>#</th><th>Descripción</th><th>Unidad</th><th>Cantidad</th><th>Precio Unit. (L.)</th><th>Total</th><th>Cuenta</th><th></th></tr></thead>
         <?php
         $initOcRows = $scItems ? array_map(fn($it)=>[
@@ -346,7 +346,7 @@ include __DIR__ . '/includes/header.php';
     </div>
     <button type="button" class="btn btn-sm btn-outline-success mt-2" onclick="addOcRow()"><i class="fas fa-plus"></i> Agregar Ítem</button>
     <div class="mt-4 d-flex gap-2">
-      <button type="submit" class="btn-ahdeco"><i class="fas fa-save"></i> Emitir Orden de Compra</button>
+      <button type="submit" class="btn-sithsa"><i class="fas fa-save"></i> Emitir Orden de Compra</button>
       <a href="?" class="btn btn-outline-secondary btn-sm">Cancelar</a>
     </div>
   </form>

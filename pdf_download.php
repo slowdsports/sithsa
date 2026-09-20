@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -16,7 +16,7 @@ include __DIR__ . '/print.php';
 $html = ob_get_clean();
 
 // ── Escribir HTML a archivo temporal ─────────────────────────────
-$uid     = 'ahdeco_' . uniqid();
+$uid     = 'sithsa_' . uniqid();
 $tmpDir  = sys_get_temp_dir();
 $tmpHtml = $tmpDir . DIRECTORY_SEPARATOR . $uid . '.html';
 $tmpPdf  = $tmpDir . DIRECTORY_SEPARATOR . $uid . '.pdf';
@@ -101,7 +101,7 @@ if (!empty($_GET['emp_id'])) {
     $se->execute([(int)$_GET['emp_id']]);
     $empSlug = '-' . preg_replace('/[^\w]/', '_', $se->fetchColumn() ?: $_GET['emp_id']);
 }
-$filename = "AHDECO-{$docNum}{$empSlug}.pdf";
+$filename = "SITHSA-{$docNum}{$empSlug}.pdf";
 
 // ── Enviar al navegador ───────────────────────────────────────────
 header('Content-Type: application/pdf');

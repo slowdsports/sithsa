@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -9,7 +9,7 @@ $id   = (int)($_GET['id'] ?? 0);
 if (!$id || !in_array($tipo, ['sc','oc','op','pl','gv','sg','proceso','pa','pb','vac','per','trabajo','salario','referencia','tiempo','plv','pav','pbv','liq','cc','memo','acta','plc','gva'])) { http_response_code(400); die('Parámetros inválidos.'); }
 
 $config  = getAllConfig($pdo);
-$org     = $config['nombre_organizacion'] ?? 'AHDECO';
+$org     = $config['nombre_organizacion'] ?? 'GRUPO SITHSA';
 $orgDir  = $config['direccion'] ?? 'Tegucigalpa, Honduras';
 $orgRtn   = $config['rtn'] ?? '';
 $orgTel   = $config['telefono'] ?? '';
@@ -515,7 +515,7 @@ $fMEMO  = $tipo === 'memo' ? loadFirmantes($pdo, 'memo') : [];
 $fACTA  = $tipo === 'acta' ? loadFirmantes($pdo, 'acta') : [];
 $fPLC   = $tipo === 'plc'  ? loadFirmantes($pdo, 'pl')   : [];
 
-$logoPath = __DIR__ . '/assets/images/logo2.png';
+$logoPath = __DIR__ . '/assets/images/sithsa.jpeg';
 $logoData = '';
 if (file_exists($logoPath)) {
     $logoData = 'data:image/png;base64,' . base64_encode(file_get_contents($logoPath));
@@ -1067,7 +1067,7 @@ foreach ($detalle as $i => $d):
 
   <div class="spacer"></div>
   <div class="doc-footer">
-    <div class="footer-left"><?= htmlspecialchars($org) ?><br>Generado el <span class="gen-ts"></span> — Sistema de Administración AHDECO</div>
+    <div class="footer-left"><?= htmlspecialchars($org) ?><br>Generado el <span class="gen-ts"></span> — Sistema de Administración SITHSA</div>
     <div class="footer-right">RECIBO — <?= htmlspecialchars($d['empleado_nombre']) ?></div>
   </div>
   <div class="bottom-bar"></div>
@@ -1185,7 +1185,7 @@ foreach ($detalle as $i => $d):
 
   <div class="spacer"></div>
   <div class="doc-footer">
-    <div class="footer-left"><?= htmlspecialchars($org) ?><br>Generado el <span class="gen-ts"></span> — Sistema de Administración AHDECO</div>
+    <div class="footer-left"><?= htmlspecialchars($org) ?><br>Generado el <span class="gen-ts"></span> — Sistema de Administración SITHSA</div>
     <div class="footer-right">ASIGNACIÓN <?= htmlspecialchars($doc['numero']) ?> — <?= htmlspecialchars($d['emp_nombre']) ?></div>
   </div>
   <div class="bottom-bar"></div>
@@ -1305,7 +1305,7 @@ foreach ($detalle as $i => $d):
 
   <div class="spacer"></div>
   <div class="doc-footer">
-    <div class="footer-left"><?= htmlspecialchars($org) ?><br>Generado el <span class="gen-ts"></span> — Sistema de Administración AHDECO</div>
+    <div class="footer-left"><?= htmlspecialchars($org) ?><br>Generado el <span class="gen-ts"></span> — Sistema de Administración SITHSA</div>
     <div class="footer-right"><?= htmlspecialchars($pbvLabel) ?> <?= $doc['anio'] ?> — <?= htmlspecialchars($d['emp_nombre']) ?></div>
   </div>
   <div class="bottom-bar"></div>
@@ -1442,7 +1442,7 @@ foreach ($detalle as $i => $d):
 
   <div class="spacer"></div>
   <div class="doc-footer">
-    <div class="footer-left"><?= htmlspecialchars($org) ?><br>Generado el <span class="gen-ts"></span> — Sistema de Administración AHDECO</div>
+    <div class="footer-left"><?= htmlspecialchars($org) ?><br>Generado el <span class="gen-ts"></span> — Sistema de Administración SITHSA</div>
     <div class="footer-right">ALIMENTACIÓN — <?= htmlspecialchars($doc['numero']) ?></div>
   </div>
   <div class="bottom-bar"></div>
@@ -1456,7 +1456,7 @@ foreach ($detalle as $i => $d):
   <div class="top-bar"></div>
   <div class="doc-header">
     <div class="org-block">
-      <?php if ($logoData): ?><img src="<?= $logoData ?>" class="org-logo" alt="AHDECO">
+      <?php if ($logoData): ?><img src="<?= $logoData ?>" class="org-logo" alt="SITHSA">
       <?php else: ?><div class="org-logo-placeholder">A</div><?php endif; ?>
       <div class="org-info">
         <div class="org-name"><?= htmlspecialchars($org) ?></div>
@@ -1498,7 +1498,7 @@ foreach ($detalle as $i => $d):
   <?= sigBlock($fSC) ?>
   <div class="spacer"></div>
   <div class="doc-footer">
-    <div class="footer-left"><?= htmlspecialchars($org) ?><br>Generado el <span class="gen-ts"></span> — Sistema de Administración AHDECO</div>
+    <div class="footer-left"><?= htmlspecialchars($org) ?><br>Generado el <span class="gen-ts"></span> — Sistema de Administración SITHSA</div>
     <div class="footer-right">SOLICITUD DE COMPRA — <?= htmlspecialchars($proc_sc['numero']) ?></div>
   </div>
   <div class="bottom-bar"></div>
@@ -1510,7 +1510,7 @@ foreach ($detalle as $i => $d):
   <div class="top-bar"></div>
   <div class="doc-header">
     <div class="org-block">
-      <?php if ($logoData): ?><img src="<?= $logoData ?>" class="org-logo" alt="AHDECO">
+      <?php if ($logoData): ?><img src="<?= $logoData ?>" class="org-logo" alt="SITHSA">
       <?php else: ?><div class="org-logo-placeholder">A</div><?php endif; ?>
       <div class="org-info">
         <div class="org-name"><?= htmlspecialchars($org) ?></div>
@@ -1570,7 +1570,7 @@ foreach ($detalle as $i => $d):
   ?>
   <div class="spacer"></div>
   <div class="doc-footer">
-    <div class="footer-left"><?= htmlspecialchars($org) ?><br>Generado el <span class="gen-ts"></span> — Sistema de Administración AHDECO</div>
+    <div class="footer-left"><?= htmlspecialchars($org) ?><br>Generado el <span class="gen-ts"></span> — Sistema de Administración SITHSA</div>
     <div class="footer-right">ORDEN DE COMPRA — <?= htmlspecialchars($proc_oc['numero']) ?></div>
   </div>
   <div class="bottom-bar"></div>
@@ -1583,7 +1583,7 @@ foreach ($detalle as $i => $d):
   <div class="top-bar"></div>
   <div class="doc-header">
     <div class="org-block">
-      <?php if ($logoData): ?><img src="<?= $logoData ?>" class="org-logo" alt="AHDECO">
+      <?php if ($logoData): ?><img src="<?= $logoData ?>" class="org-logo" alt="SITHSA">
       <?php else: ?><div class="org-logo-placeholder">A</div><?php endif; ?>
       <div class="org-info">
         <div class="org-name"><?= htmlspecialchars($org) ?></div>
@@ -1626,7 +1626,7 @@ foreach ($detalle as $i => $d):
   <?= sigBlock($fOP) ?>
   <div class="spacer"></div>
   <div class="doc-footer">
-    <div class="footer-left"><?= htmlspecialchars($org) ?><br>Generado el <span class="gen-ts"></span> — Sistema de Administración AHDECO</div>
+    <div class="footer-left"><?= htmlspecialchars($org) ?><br>Generado el <span class="gen-ts"></span> — Sistema de Administración SITHSA</div>
     <div class="footer-right">ORDEN DE PAGO — <?= htmlspecialchars($proc_op['numero']) ?></div>
   </div>
   <div class="bottom-bar"></div>
@@ -1645,7 +1645,7 @@ $sgHasAlim = ($tipo === 'sg' && ($doc['monto_alimentacion'] ?? 0) > 0);
   <div class="doc-header">
     <div class="org-block">
       <?php if ($logoData): ?>
-        <img src="<?= $logoData ?>" class="org-logo" alt="AHDECO">
+        <img src="<?= $logoData ?>" class="org-logo" alt="SITHSA">
       <?php else: ?>
         <div class="org-logo-placeholder">A</div>
       <?php endif; ?>
@@ -3066,7 +3066,7 @@ $sgHasAlim = ($tipo === 'sg' && ($doc['monto_alimentacion'] ?? 0) > 0);
   <div class="doc-footer">
     <div class="footer-left">
       <?= htmlspecialchars($org) ?><?php if($orgRtn): ?> &nbsp;·&nbsp; RTN <?= htmlspecialchars($orgRtn) ?><?php endif; ?><br>
-      Generado el <span class="gen-ts"></span> — Sistema de Administración AHDECO
+      Generado el <span class="gen-ts"></span> — Sistema de Administración SITHSA
     </div>
     <div class="footer-right">
       <?= $title ?> — <?= htmlspecialchars($docNum) ?>
@@ -3181,7 +3181,7 @@ $sgHasAlim = ($tipo === 'sg' && ($doc['monto_alimentacion'] ?? 0) > 0);
 
   <div class="spacer"></div>
   <div class="doc-footer">
-    <div class="footer-left"><?= htmlspecialchars($org) ?><br>Generado el <span class="gen-ts"></span> — Sistema de Administración AHDECO</div>
+    <div class="footer-left"><?= htmlspecialchars($org) ?><br>Generado el <span class="gen-ts"></span> — Sistema de Administración SITHSA</div>
     <div class="footer-right">VOUCHER ALIMENTACIÓN — <?= htmlspecialchars($doc['numero']) ?></div>
   </div>
   <div class="bottom-bar"></div>
@@ -3199,7 +3199,7 @@ $orientation = in_array($tipo, ['pl','pb']) ? 'landscape' : 'portrait';
 $isMultiPageDoc = ($tipo === 'proceso') || ($sgHasAlim ?? false);
 $pdfSelector = $isMultiPageDoc ? '#all-pages' : '.page';
 $safeNum     = preg_replace('/[^\w\-]/', '_', "$tipo-$docNum");
-$filename    = "AHDECO-{$safeNum}.pdf";
+$filename    = "SITHSA-{$safeNum}.pdf";
 ?>
 
 // ── Hora local del dispositivo en todos los footers ───────────────

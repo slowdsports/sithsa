@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/auth.php';
 require_once __DIR__ . '/config/functions.php';
@@ -100,11 +100,11 @@ include __DIR__ . '/includes/header.php';
 <div class="page-header">
   <h1><i class="fas fa-hand-holding-dollar"></i> Préstamos a Empleados</h1>
   <?php if ($action === 'list'): ?>
-  <button class="btn-ahdeco" data-bs-toggle="modal" data-bs-target="#modal-nuevo">
+  <button class="btn-sithsa" data-bs-toggle="modal" data-bs-target="#modal-nuevo">
     <i class="fas fa-plus"></i> Nuevo Préstamo
   </button>
   <?php else: ?>
-  <a href="prestamos.php" class="btn-ahdeco-outline"><i class="fas fa-arrow-left"></i> Volver</a>
+  <a href="prestamos.php" class="btn-sithsa-outline"><i class="fas fa-arrow-left"></i> Volver</a>
   <?php endif; ?>
 </div>
 
@@ -143,7 +143,7 @@ include __DIR__ . '/includes/header.php';
 
 <div class="card">
   <div class="card-body p-0">
-    <table id="tbl-pres" class="table-ahdeco w-100">
+    <table id="tbl-pres" class="table-sithsa w-100">
       <thead><tr><th>Número</th><th>Empleado</th><th>Fecha</th><th>Monto</th><th>Cuotas</th><th>Cuota</th><th>Saldo</th><th>Estado</th><th></th></tr></thead>
       <tbody>
         <?php foreach ($lista as $p): ?>
@@ -219,7 +219,7 @@ include __DIR__ . '/includes/header.php';
 <div class="card">
   <div class="card-header"><i class="fas fa-history"></i> Historial de Pagos</div>
   <div class="card-body p-0">
-    <table class="table-ahdeco w-100">
+    <table class="table-sithsa w-100">
       <thead><tr><th>#</th><th>Fecha</th><th>Monto</th><th>Notas</th></tr></thead>
       <tbody>
         <?php $i = 1; foreach ($pagos as $pg): ?>
@@ -273,7 +273,7 @@ include __DIR__ . '/includes/header.php';
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn-ahdeco" onclick="registrarPago()"><i class="fas fa-save"></i> Guardar</button>
+        <button type="button" class="btn-sithsa" onclick="registrarPago()"><i class="fas fa-save"></i> Guardar</button>
       </div>
     </div>
   </div>
@@ -329,7 +329,7 @@ include __DIR__ . '/includes/header.php';
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn-ahdeco" onclick="crearPrestamo()"><i class="fas fa-save"></i> Guardar</button>
+        <button type="button" class="btn-sithsa" onclick="crearPrestamo()"><i class="fas fa-save"></i> Guardar</button>
       </div>
     </div>
   </div>
