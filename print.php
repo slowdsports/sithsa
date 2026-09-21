@@ -6,7 +6,7 @@ requireLogin();
 
 $tipo = $_GET['tipo'] ?? '';
 $id   = (int)($_GET['id'] ?? 0);
-if (!$id || !in_array($tipo, ['sc','oc','op','pl','gv','sg','proceso','pa','pb','vac','per','trabajo','salario','referencia','tiempo','plv','pav','pbv','liq','cc','memo','acta','plc','gva'])) { http_response_code(400); die('Parámetros inválidos.'); }
+if (!$id || !in_array($tipo, ['sc','oc','op','pl','gv','sg','proceso','pa','pb','vac','per','trabajo','salario','referencia','tiempo','plv','pav','pbv','liq','cc','memo','acta','plc','gva','rr'])) { http_response_code(400); die('Parámetros inválidos.'); }
 
 $config  = getAllConfig($pdo);
 $org     = $config['nombre_organizacion'] ?? 'GRUPO SITHSA';
@@ -82,6 +82,24 @@ switch ($tipo) {
         $s->execute([$id]); $doc = $s->fetch();
         if (!$doc) die('Orden de pago no encontrada.');
         $title  = 'ORDEN DE PAGO';
+        $docNum = $doc['numero'];
+        break;
+
+    // ── Recibo por Retención de Dinero (custodia, no venta) ────────
+    case 'rr':
+        $s = $pdo->prepare("SELECT r.*, c.nombre AS cli_nombre, c.rtn AS cli_rtn, c.direccion AS cli_direccion,
+            cb.nombre AS banco_nombre, cc.nombre AS cuenta_nombre, p.nombre AS proyecto_nombre,
+            CONCAT(e.nombre,' ',e.apellidos) AS recibido_por_nombre
+            FROM recibos_retencion r
+            JOIN clientes c ON r.cliente_id = c.id
+            LEFT JOIN cuentas_bancarias cb ON r.cuenta_bancaria_id = cb.id
+            LEFT JOIN cuentas_contables cc ON r.cuenta_id = cc.id
+            LEFT JOIN proyectos p ON r.proyecto_id = p.id
+            LEFT JOIN empleados e ON r.recibido_por_id = e.id
+            WHERE r.id = ?");
+        $s->execute([$id]); $doc = $s->fetch();
+        if (!$doc) die('Recibo no encontrado.');
+        $title  = 'RECIBO POR RETENCIÓN DE DINERO';
         $docNum = $doc['numero'];
         break;
 
@@ -1936,6 +1954,79 @@ $sgHasAlim = ($tipo === 'sg' && ($doc['monto_alimentacion'] ?? 0) > 0);
   </div>
 
   <?= sigBlock($fOP) ?>
+
+  <?php /* ══════════════ RECIBO POR RETENCIÓN DE DINERO ══════════════ */ elseif ($tipo === 'rr'): ?>
+
+  <div class="meta-section">
+    <div class="meta-grid cols-4">
+      <div class="meta-item">
+        <div class="meta-label">Fecha</div>
+        <div class="meta-value"><?= fmtFecha($doc['fecha']) ?></div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Forma de Recepción</div>
+        <div class="meta-value"><?= ucfirst($doc['forma_recepcion']) ?></div>
+      </div>
+      <?php if ($doc['numero_cheque']): ?>
+      <div class="meta-item">
+        <div class="meta-label">Número de Cheque</div>
+        <div class="meta-value mono"><?= htmlspecialchars($doc['numero_cheque']) ?></div>
+      </div>
+      <?php endif; ?>
+      <div class="meta-item">
+        <div class="meta-label">Cuenta Bancaria</div>
+        <div class="meta-value"><?= htmlspecialchars($doc['banco_nombre'] ?? '—') ?></div>
+      </div>
+      <div class="meta-item" style="grid-column:1/3">
+        <div class="meta-label">Cliente</div>
+        <div class="meta-value" style="font-size:11pt;font-weight:700;color:#0D3F6A"><?= htmlspecialchars($doc['cli_nombre']) ?></div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">RTN Cliente</div>
+        <div class="meta-value mono"><?= htmlspecialchars($doc['cli_rtn'] ?: '—') ?></div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cuenta Contable</div>
+        <div class="meta-value"><?= htmlspecialchars($doc['cuenta_nombre'] ?? '—') ?></div>
+      </div>
+      <?php if ($doc['proyecto_nombre']): ?>
+      <div class="meta-item">
+        <div class="meta-label">Proyecto</div>
+        <div class="meta-value"><?= htmlspecialchars($doc['proyecto_nombre']) ?></div>
+      </div>
+      <?php endif; ?>
+      <div class="meta-item">
+        <div class="meta-label">Recibido por</div>
+        <div class="meta-value"><?= htmlspecialchars($doc['recibido_por_nombre'] ?? '—') ?></div>
+      </div>
+      <div class="meta-item meta-full">
+        <div class="meta-label">Concepto / Motivo de la Retención</div>
+        <div class="meta-value"><?= htmlspecialchars($doc['concepto']) ?></div>
+      </div>
+      <?php if ($doc['notas']): ?>
+      <div class="meta-item meta-full">
+        <div class="meta-label">Notas</div>
+        <div class="meta-value"><?= htmlspecialchars($doc['notas']) ?></div>
+      </div>
+      <?php endif; ?>
+    </div>
+  </div>
+
+  <div class="amount-block">
+    <div>
+      <div class="amount-label">Monto Retenido en Custodia (no es ingreso por venta)</div>
+      <div class="amount-value"><?= lps($doc['monto']) ?></div>
+    </div>
+  </div>
+
+  <?php
+  $rrSigs = [
+      ['etiqueta' => 'Recibido por', 'emp_nombre' => $doc['recibido_por_nombre'] ?? ''],
+      ['etiqueta' => 'Autorizado por', 'emp_nombre' => ''],
+      ['etiqueta' => 'Entregado por (Cliente)', 'emp_nombre' => $doc['cli_nombre']],
+  ];
+  echo sigBlock($rrSigs);
+  ?>
 
   <?php /* ══════════════ PLANILLA ══════════════ */ elseif ($tipo === 'pl'): ?>
 

@@ -14,6 +14,12 @@ if (isAjax() && $_SERVER['REQUEST_METHOD'] === 'POST') {
         $d = ['nombre'=>trim($_POST['nombre']),'email'=>trim($_POST['email']),'rol'=>$_POST['rol']??'asistente','activo'=>isset($_POST['activo'])?1:0];
         try {
             if ($uid) {
+                $esTitularStmt = $pdo->prepare("SELECT es_titular FROM usuarios WHERE id=?");
+                $esTitularStmt->execute([$uid]);
+                $esTitular = (bool)$esTitularStmt->fetchColumn();
+                if ($esTitular && ($d['rol'] !== 'admin' || !$d['activo'])) {
+                    jsonErr('El usuario titular de la cuenta solo puede administrarse desde el Panel de Proveedor.');
+                }
                 $pdo->prepare("UPDATE usuarios SET nombre=?,email=?,rol=?,activo=? WHERE id=?")->execute([...array_values($d), $uid]);
                 if ($_POST['new_password'] ?? '') {
                     $pdo->prepare("UPDATE usuarios SET password=? WHERE id=?")->execute([password_hash($_POST['new_password'], PASSWORD_BCRYPT),$uid]);
@@ -45,7 +51,7 @@ include __DIR__ . '/includes/header.php';
       <tr>
         <td><?= htmlspecialchars($u['nombre']) ?></td>
         <td><?= htmlspecialchars($u['email']) ?></td>
-        <td><span class="badge bg-<?= $u['rol']==='admin'?'danger':($u['rol']==='contador'?'primary':'secondary') ?>"><?= ucfirst($u['rol']) ?></span></td>
+        <td><span class="badge bg-<?= $u['rol']==='admin'?'danger':($u['rol']==='contador'?'primary':'secondary') ?>"><?= ucfirst($u['rol']) ?></span> <?php if($u['es_titular']): ?><span class="badge bg-dark" title="Titular de la cuenta, gestionado desde el Panel de Proveedor"><i class="fas fa-crown"></i> Titular</span><?php endif; ?></td>
         <td><?= $u['ultimo_acceso']?date('d/m/Y H:i',strtotime($u['ultimo_acceso'])):'â€”' ?></td>
         <td><?= $u['activo']?'<span class="badge bg-success">Activo</span>':'<span class="badge bg-danger">Inactivo</span>' ?></td>
         <td><button class="btn btn-sm btn-outline-primary py-0 px-2" onclick='editUser(<?= json_encode(['id'=>$u['id'],'nombre'=>$u['nombre'],'email'=>$u['email'],'rol'=>$u['rol'],'activo'=>$u['activo']]) ?>)'><i class="fas fa-edit"></i></button></td>

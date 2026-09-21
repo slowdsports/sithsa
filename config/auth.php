@@ -8,6 +8,20 @@ function requireLogin() {
         header('Location: ' . BASE_URL . 'index.php');
         exit;
     }
+    checkLicencia();
+}
+
+// Bloquea el acceso a todo el sistema si la suscripción de esta
+// instalación venció o fue suspendida desde el Panel de Proveedor.
+function checkLicencia() {
+    global $pdo;
+    $exentos = ['licencia_vencida.php', 'proveedor.php', 'logout.php'];
+    if (in_array(basename($_SERVER['PHP_SELF']), $exentos)) return;
+    if (!function_exists('licenciaVigente') || !isset($pdo)) return;
+    if (!licenciaVigente($pdo)) {
+        header('Location: ' . BASE_URL . 'licencia_vencida.php');
+        exit;
+    }
 }
 
 function isLoggedIn() {

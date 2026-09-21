@@ -45,6 +45,13 @@ function sidebarItem(string $file, string $icon, string $label, string $cur, str
     <?= sidebarItem('proveedores.php', 'fa-truck', 'Proveedores', $cur) ?>
   </div>
 
+  <!-- CLIENTES -->
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">Clientes</div>
+    <?= sidebarItem('clientes.php', 'fa-address-book', 'Catálogo de Clientes', $cur) ?>
+    <?= sidebarItem('recibos_retencion.php', 'fa-hand-holding-dollar', 'Recibos por Retención', $cur) ?>
+  </div>
+
   <!-- PROYECTOS Y PRESUPUESTO -->
   <div class="sidebar-section">
     <div class="sidebar-section-title">Proyectos y Presupuesto</div>

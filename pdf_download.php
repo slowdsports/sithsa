@@ -6,7 +6,7 @@ requireLogin();
 
 $tipo = $_GET['tipo'] ?? '';
 $id   = (int)($_GET['id'] ?? 0);
-if (!$id || !in_array($tipo, ['sc','oc','op','pl','plv','plc','gv','sg','proceso','pa','pb','pav','pbv','vac','per','trabajo','salario','referencia','tiempo','liq','cc','memo','acta','gva'])) {
+if (!$id || !in_array($tipo, ['sc','oc','op','pl','plv','plc','gv','sg','proceso','pa','pb','pav','pbv','vac','per','trabajo','salario','referencia','tiempo','liq','cc','memo','acta','gva','rr'])) {
     http_response_code(400); die('Parámetros inválidos.');
 }
 

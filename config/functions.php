@@ -85,6 +85,34 @@ function calcularISRQuincenal(float $sueldoQ, float $exentoAnual = 142771.50): f
     return round($isr / 24, 2);
 }
 
+// ── Licencia / Suscripción de esta instalación ────────────────────
+function licenciaInfo(PDO $pdo): ?array {
+    static $lic = null;
+    if ($lic === null) {
+        try {
+            $lic = $pdo->query("SELECT * FROM licencia WHERE id=1")->fetch() ?: false;
+        } catch (\Exception $e) {
+            $lic = false; // tabla aún no migrada: no bloquear la instalación
+        }
+    }
+    return $lic ?: null;
+}
+
+function licenciaVigente(PDO $pdo): bool {
+    $lic = licenciaInfo($pdo);
+    if (!$lic) return true;
+    if ($lic['estado'] !== 'activa') return false;
+    if ($lic['fecha_vencimiento'] && $lic['fecha_vencimiento'] < date('Y-m-d')) return false;
+    return true;
+}
+
+function licenciaDiasRestantes(PDO $pdo): ?int {
+    $lic = licenciaInfo($pdo);
+    if (!$lic || !$lic['fecha_vencimiento']) return null;
+    $dias = (strtotime($lic['fecha_vencimiento']) - strtotime(date('Y-m-d'))) / 86400;
+    return (int) round($dias);
+}
+
 // ── Config helper ──────────────────────────────────────────────────
 function getConfig(PDO $pdo, string $clave, string $default = ''): string {
     static $cache = [];
@@ -137,6 +165,8 @@ function estadoBadge(string $estado): string {
         'cotizando'   => 'warning',
         'adjudicada'  => 'success',
         'anulada'     => 'dark',
+        'anulado'     => 'dark',
+        'devuelto'    => 'info',
         'activo'      => 'success',
         'cerrado'     => 'secondary',
         'suspendido'  => 'warning',
