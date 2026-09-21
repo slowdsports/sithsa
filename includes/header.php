@@ -77,11 +77,14 @@ $_avatarFoto = $user['foto'] ? BASE_URL . $user['foto'] : '';
 <!-- MAIN CONTENT -->
 <main id="main-content">
   <div id="toast-container"></div>
-  <?php if (hasRole(['admin']) && function_exists('licenciaDiasRestantes')):
-    $__diasLic = licenciaDiasRestantes($pdo);
-    if ($__diasLic !== null && $__diasLic >= 0 && $__diasLic <= 15): ?>
+  <?php
+  $__diasLic = null;
+  if (hasRole(['admin']) && function_exists('licenciaDiasRestantes') && ($pdo instanceof PDO)) {
+      try { $__diasLic = licenciaDiasRestantes($pdo); } catch (\Throwable $e) { $__diasLic = null; }
+  }
+  if ($__diasLic !== null && $__diasLic >= 0 && $__diasLic <= 15): ?>
   <div class="alert alert-warning d-flex align-items-center gap-2 mb-3" style="font-size:.85rem">
     <i class="fas fa-triangle-exclamation"></i>
     Su suscripción a SITHSA vence en <strong><?= $__diasLic ?></strong> día<?= $__diasLic == 1 ? '' : 's' ?>. Contacte al proveedor para renovarla.
   </div>
-  <?php endif; endif; ?>
+  <?php endif; ?>

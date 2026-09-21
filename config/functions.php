@@ -91,8 +91,8 @@ function licenciaInfo(PDO $pdo): ?array {
     if ($lic === null) {
         try {
             $lic = $pdo->query("SELECT * FROM licencia WHERE id=1")->fetch() ?: false;
-        } catch (\Exception $e) {
-            $lic = false; // tabla aún no migrada: no bloquear la instalación
+        } catch (\Throwable $e) {
+            $lic = false; // tabla aún no migrada o inaccesible: no bloquear la instalación
         }
     }
     return $lic ?: null;
