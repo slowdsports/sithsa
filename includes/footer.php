@@ -1,4 +1,4 @@
-﻿</main><!-- /main-content -->
+</main><!-- /main-content -->
 
 <footer class="app-footer">
   <span>&copy; <?= date('Y') ?> SITHSA &mdash; Sistema de Administración y Finanzas</span>
