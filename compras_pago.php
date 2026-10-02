@@ -283,6 +283,7 @@ include __DIR__ . '/includes/header.php';
       <button class="btn btn-sm btn-info text-white" onclick="cambiarEstado('compras_pago.php',<?=$op['id']?>,'pagada','ordenes_pago',()=>location.reload())"><i class="fas fa-money-bill"></i> Pagar</button>
       <?php endif; ?>
       <a href="<?= BASE_URL ?>print.php?tipo=op&id=<?= $op['id'] ?>" target="_blank" class="btn btn-sm btn-outline-danger"><i class="fas fa-file-pdf"></i> PDF</a>
+      <a href="<?= BASE_URL ?>print.php?tipo=rb&id=<?= $op['id'] ?>" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fas fa-receipt"></i> Recibo</a>
       <?php if ($traza['sc']): ?>
       <a href="<?= BASE_URL ?>print.php?tipo=proceso&id=<?= $traza['sc']['id'] ?>" target="_blank" class="btn btn-sm btn-outline-dark"><i class="fas fa-layer-group"></i> Proceso Completo</a>
       <?php endif; ?>

@@ -6,7 +6,7 @@ requireLogin();
 
 $tipo = $_GET['tipo'] ?? '';
 $id   = (int)($_GET['id'] ?? 0);
-if (!$id || !in_array($tipo, ['sc','oc','op','pl','gv','sg','proceso','pa','pb','vac','per','trabajo','salario','referencia','tiempo','plv','pav','pbv','liq','cc','memo','acta','plc','gva','rr'])) { http_response_code(400); die('Parámetros inválidos.'); }
+if (!$id || !in_array($tipo, ['sc','oc','op','rb','pl','gv','sg','proceso','pa','pb','vac','per','trabajo','salario','referencia','tiempo','plv','pav','pbv','liq','cc','memo','acta','plc','gva','rr'])) { http_response_code(400); die('Parámetros inválidos.'); }
 
 $config  = getAllConfig($pdo);
 $org     = $config['nombre_organizacion'] ?? 'GRUPO SITHSA';
@@ -83,6 +83,29 @@ switch ($tipo) {
         if (!$doc) die('Orden de pago no encontrada.');
         $title  = 'ORDEN DE PAGO';
         $docNum = $doc['numero'];
+        break;
+
+    // ── Recibo de Beneficiario (acuse de recibo de una Orden de Pago) ──
+    case 'rb':
+        $s = $pdo->prepare("SELECT op.*,
+            p.nombre AS prov_nombre,
+            oc.numero AS oc_numero,
+            sc.numero AS sc_numero,
+            CONCAT(e.nombre,' ',e.apellidos) AS emp_nombre,
+            CONCAT(a1.nombre,' ',a1.apellidos) AS aprobador1_nombre,
+            CONCAT(a2.nombre,' ',a2.apellidos) AS aprobador2_nombre
+            FROM ordenes_pago op
+            LEFT JOIN proveedores p ON op.proveedor_id = p.id
+            LEFT JOIN ordenes_compra oc ON op.orden_compra_id = oc.id
+            LEFT JOIN solicitud_compra sc ON oc.solicitud_id = sc.id
+            LEFT JOIN empleados e ON op.empleado_id = e.id
+            LEFT JOIN empleados a1 ON op.aprobador1_id = a1.id
+            LEFT JOIN empleados a2 ON op.aprobador2_id = a2.id
+            WHERE op.id = ?");
+        $s->execute([$id]); $doc = $s->fetch();
+        if (!$doc) die('Orden de pago no encontrada.');
+        $title  = 'RECIBO DE PAGO';
+        $docNum = preg_replace('/^[A-Za-z]+/', 'RB', $doc['numero']);
         break;
 
     // ── Recibo por Retención de Dinero (custodia, no venta) ────────
@@ -1954,6 +1977,64 @@ $sgHasAlim = ($tipo === 'sg' && ($doc['monto_alimentacion'] ?? 0) > 0);
   </div>
 
   <?= sigBlock($fOP) ?>
+
+  <?php /* ══════════════ RECIBO DE BENEFICIARIO (acuse de OP) ══════════════ */ elseif ($tipo === 'rb'): ?>
+
+  <div class="ref-chain">
+    <span class="ref-pill">💳 <?= htmlspecialchars($doc['numero']) ?></span>
+    <span class="ref-arrow">→</span>
+    <span class="ref-pill ref-current">🧾 <?= htmlspecialchars($docNum) ?></span>
+  </div>
+
+  <div class="meta-section">
+    <div class="meta-grid cols-4">
+      <div class="meta-item">
+        <div class="meta-label">Fecha</div>
+        <div class="meta-value"><?= fmtFecha($doc['fecha_pago'] ?: $doc['fecha']) ?></div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Forma de Pago</div>
+        <div class="meta-value"><?= ucfirst($doc['forma_pago']) ?></div>
+      </div>
+      <?php if ($doc['numero_cheque']): ?>
+      <div class="meta-item">
+        <div class="meta-label">Número de Cheque</div>
+        <div class="meta-value mono"><?= htmlspecialchars($doc['numero_cheque']) ?></div>
+      </div>
+      <?php endif; ?>
+      <div class="meta-item">
+        <div class="meta-label">Orden de Pago</div>
+        <div class="meta-value mono"><?= htmlspecialchars($doc['numero']) ?></div>
+      </div>
+      <div class="meta-item meta-full">
+        <div class="meta-label">Recibí de</div>
+        <div class="meta-value"><?= htmlspecialchars($org) ?></div>
+      </div>
+      <div class="meta-item meta-full">
+        <div class="meta-label">La suma de</div>
+        <div class="meta-value" style="font-size:11pt;font-weight:700;color:#0D3F6A"><?= htmlspecialchars($doc['beneficiario']) ?></div>
+      </div>
+      <div class="meta-item meta-full">
+        <div class="meta-label">En concepto de</div>
+        <div class="meta-value"><?= htmlspecialchars($doc['concepto']) ?></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="amount-block">
+    <div>
+      <div class="amount-label">Monto Recibido</div>
+      <div class="amount-value"><?= lps($doc['monto']) ?></div>
+    </div>
+  </div>
+
+  <?php
+  $rbSigs = [
+      ['etiqueta' => 'Recibí Conforme (Beneficiario)', 'emp_nombre' => $doc['beneficiario']],
+      ['etiqueta' => 'Entregado por', 'emp_nombre' => ''],
+  ];
+  echo sigBlock($rbSigs, 'cols-2');
+  ?>
 
   <?php /* ══════════════ RECIBO POR RETENCIÓN DE DINERO ══════════════ */ elseif ($tipo === 'rr'): ?>
 
